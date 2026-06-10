@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 World Cup Pool — Pick Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --green: #1a5c2a;
+    --green-mid: #2d8a47;
+    --green-light: #e8f5ec;
+    --red: #b52a2a;
+    --ink: #1a1a1a;
+    --ink-mid: #444;
+    --ink-light: #888;
+    --border: #d4d0c8;
+    --bg: #faf8f4;
+    --pot1: #1a3a5c;
+    --pot2: #5c3a1a;
+    --pot3: #5c1a3a;
+    --pot4: #2d5a2d;
+    --pot5: #3a1a5c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.6; }
+
+  @media print {
+    .no-print { display: none !important; }
+    body { background: white; font-size: 12px; }
+    .hero { background: var(--green) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pot-pill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .legend-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .return-box { border: 1.5px solid #aaa !important; }
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--green);
+    color: white;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before { content: '⚽'; position: absolute; right: 20px; top: 4px; font-size: 48px; opacity: 0.1; line-height: 1; }
+  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 2px; }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; line-height: 1; letter-spacing: 0.04em; color: white; margin: 0; }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub { font-size: 12px; color: rgba(255,255,255,0.65); font-weight: 300; margin-top: 2px; }
+
+  .page-wrap { max-width: 680px; margin: 0 auto; padding: 32px 32px; }
+
+  /* POT QUICK REF */
+  .pot-legend {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .legend-card { border-radius: 6px; padding: 10px 10px; color: white; }
+  .legend-card .pot-num { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.75; margin-bottom: 2px; }
+  .legend-card .pot-name { font-family: 'Bebas Neue', sans-serif; font-size: 15px; line-height: 1; margin-bottom: 5px; letter-spacing: 0.04em; }
+  .legend-pts { font-family: 'DM Mono', monospace; font-size: 10px; }
+  .legend-pts .w { color: #a8e6b8; display: block; }
+  .legend-pts .l { color: #f4a8a8; display: block; }
+  .lc1 { background: var(--pot1); }
+  .lc2 { background: var(--pot2); }
+  .lc3 { background: var(--pot3); }
+  .lc4 { background: var(--pot4); }
+  .lc5 { background: var(--pot5); }
+
+  /* REMINDER STRIP */
+  .reminder-strip {
+    background: var(--green-light);
+    border: 1px solid #b8dfc4;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 12px;
+    color: var(--green);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .reminder-strip span { display: flex; align-items: center; gap: 5px; font-weight: 500; }
+
+  /* PICK SHEET */
+  .pick-sheet {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+  .sheet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .sheet-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.04em; color: var(--ink); font-weight: 400; }
+  .name-line { display: flex; align-items: center; gap: 10px; }
+  .name-label { font-size: 12px; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.06em; }
+  .name-input {
+    border: none;
+    border-bottom: 2px solid var(--gold);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--green);
+    background: transparent;
+    width: 220px;
+    outline: none;
+  }
+  .name-input::placeholder { color: #ccc; }
+
+  .col-headers { display: grid; grid-template-columns: 110px 1fr 1fr; gap: 8px; margin-bottom: 8px; padding: 0 4px; }
+  .col-headers span { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-light); }
+
+  .pick-row { display: grid; grid-template-columns: 110px 1fr 1fr; gap: 8px; margin-bottom: 8px; align-items: center; }
+  .pot-pill {
+    padding: 8px 6px;
+    border-radius: 6px;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+  .pp1 { background: var(--pot1); }
+  .pp2 { background: var(--pot2); }
+  .pp3 { background: var(--pot3); }
+  .pp4 { background: var(--pot4); }
+  .pp5 { background: var(--pot5); }
+
+  .team-input {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 9px 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--bg);
+    width: 100%;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .team-input:focus { background: white; }
+  .team-input.w:focus { border-color: var(--green-mid); }
+  .team-input.l:focus { border-color: var(--red); }
+
+  .sheet-rule {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--ink-light);
+  }
+  .sheet-rule strong { color: var(--ink-mid); }
+
+  /* RETURN BOX */
+  .return-box {
+    background: white;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .return-box .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-light); margin-bottom: 4px; }
+  .return-box .deadline { font-size: 13px; color: var(--ink-mid); }
+  .return-box .deadline strong { color: var(--ink); }
+  .email-btn {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .email-btn:hover { background: var(--green-mid); }
+
+  .print-btn { display: inline-block; background: var(--green); color: white; border: none; padding: 10px 22px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; border-radius: 6px; cursor: pointer; text-transform: uppercase; margin-bottom: 24px; }
+  .print-btn:hover { background: var(--green-mid); }
+
+  footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 18px; font-size: 12px; font-family: 'DM Mono', monospace; letter-spacing: 0.06em; margin-top: 32px; }
+  footer span { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div>
+    <div class="hero-eyebrow">2026 FIFA World Cup Pool</div>
+    <h1>Your <span>Pick Sheet</span></h1>
+    <p class="hero-sub">Fill out and return to Dave before June 11, 2026</p>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <button class="print-btn no-print" onclick="window.print()">🖨 Print this sheet</button>
+
+  <!-- POT REFERENCE -->
+  <div class="pot-legend">
+    <div class="legend-card lc1"><div class="pot-num">Pot 1</div><div class="pot-name">Elite</div><div class="legend-pts"><span class="w">Win: 10</span><span class="l">Loss: 50</span></div></div>
+    <div class="legend-card lc2"><div class="pot-num">Pot 2</div><div class="pot-name">Dark Horses</div><div class="legend-pts"><span class="w">Win: 50</span><span class="l">Loss: 25</span></div></div>
+    <div class="legend-card lc3"><div class="pot-num">Pot 3</div><div class="pot-name">Longshots</div><div class="legend-pts"><span class="w">Win: 100</span><span class="l">Loss: 15</span></div></div>
+    <div class="legend-card lc4"><div class="pot-num">Pot 4</div><div class="pot-name">Outsiders</div><div class="legend-pts"><span class="w">Win: 200</span><span class="l">Loss: 10</span></div></div>
+    <div class="legend-card lc5"><div class="pot-num">Pot 5</div><div class="pot-name">Wildcards</div><div class="legend-pts"><span class="w">Win: 350</span><span class="l">Loss: 5</span></div></div>
+  </div>
+
+  <!-- REMINDERS -->
+  <div class="reminder-strip">
+    <span>🏆 Most points wins</span>
+    <span>✅ Winners score when they win</span>
+    <span>❌ Losers score when they lose</span>
+    <span>⚡ Knockouts 3× · Final 5×</span>
+    <span>🟠 ET &amp; PKs count as a win/loss</span>
+  </div>
+
+  <!-- PICK SHEET -->
+  <div class="pick-sheet">
+    <div class="sheet-header">
+      <span class="sheet-title">2026 World Cup Pool Entry</span>
+      <div class="name-line">
+        <span class="name-label">Your name</span>
+        <input class="name-input" type="text" placeholder="Enter your name" />
+      </div>
+    </div>
+
+    <div class="col-headers">
+      <span>Pot</span>
+      <span>⬆ Winner — scores when they win</span>
+      <span>⬇ Loser — scores when they lose</span>
+    </div>
+
+    <div class="pick-row">
+      <div class="pot-pill pp1">Pot 1<br>Elite<br><small style="opacity:0.75;font-size:9px">W:10 · L:50</small></div>
+      <input class="team-input w" type="text" placeholder="Team name" />
+      <input class="team-input l" type="text" placeholder="Team name" />
+    </div>
+    <div class="pick-row">
+      <div class="pot-pill pp2">Pot 2<br>Dark Horses<br><small style="opacity:0.75;font-size:9px">W:50 · L:25</small></div>
+      <input class="team-input w" type="text" placeholder="Team name" />
+      <input class="team-input l" type="text" placeholder="Team name" />
+    </div>
+    <div class="pick-row">
+      <div class="pot-pill pp3">Pot 3<br>Longshots<br><small style="opacity:0.75;font-size:9px">W:100 · L:15</small></div>
+      <input class="team-input w" type="text" placeholder="Team name" />
+      <input class="team-input l" type="text" placeholder="Team name" />
+    </div>
+    <div class="pick-row">
+      <div class="pot-pill pp4">Pot 4<br>Outsiders<br><small style="opacity:0.75;font-size:9px">W:200 · L:10</small></div>
+      <input class="team-input w" type="text" placeholder="Team name" />
+      <input class="team-input l" type="text" placeholder="Team name" />
+    </div>
+    <div class="pick-row">
+      <div class="pot-pill pp5">Pot 5<br>Wildcards<br><small style="opacity:0.75;font-size:9px">W:350 · L:5</small></div>
+      <input class="team-input w" type="text" placeholder="Team name" />
+      <input class="team-input l" type="text" placeholder="Team name" />
+    </div>
+
+    <div class="sheet-rule">
+      ⚠ Your winner and loser in each pot must be <strong>different teams</strong> &nbsp;·&nbsp; No team can appear on <strong>both</strong> your winner and loser lists
+    </div>
+
+    <div style="margin-top:20px;padding-top:18px;border-top:2px solid var(--gold);">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--ink-light);margin-bottom:4px;">⚽ Tiebreaker</div>
+          <div style="font-size:14px;color:var(--ink-mid);">How many goals will <strong style="color:var(--ink)">Lionel Messi</strong> score in the 2026 World Cup?</div>
+          <div style="font-size:11px;color:var(--ink-light);margin-top:3px;">Used only if two players finish tied on total points. Closest guess wins.</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <label style="font-size:13px;font-weight:500;color:var(--ink-mid);">My guess:</label>
+          <input type="number" min="0" max="20" placeholder="0"
+            style="border:2px solid var(--gold);border-radius:6px;padding:8px 12px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--green);background:white;width:80px;text-align:center;outline:none;" />
+          <span style="font-size:13px;color:var(--ink-light);">goals</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RETURN INSTRUCTIONS -->
+  <div class="return-box">
+    <div>
+      <div class="label">Return your picks to Dave</div>
+      <div style="font-size:11px;color:#C9A84C;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px;">🏆 Prize: World Soccer Gift Pack</div>
+      <div style="font-size:11px;color:var(--ink-light);margin-bottom:6px;">No entry fee · Don't expect too much 😄</div>
+      <div class="deadline">Email your completed sheet to <strong>davemestres@yahoo.com</strong><br>Deadline: <strong>June 11, 2026</strong> before the first match kicks off</div>
+    </div>
+    <a class="email-btn no-print" href="mailto:davemestres@yahoo.com?subject=2026 World Cup Pool — My Picks">📧 Email Dave</a>
+  </div>
+
+</div>
+
+<footer>
+  <span>2026 FIFA WORLD CUP POOL</span> &nbsp;·&nbsp; June 11 – July 19, 2026 &nbsp;·&nbsp; USA · Canada · Mexico
+</footer>
+
+</body>
+</html>

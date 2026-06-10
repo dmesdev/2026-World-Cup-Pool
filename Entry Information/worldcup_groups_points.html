@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 World Cup Pool — Groups & Points</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --green: #1a5c2a;
+    --green-mid: #2d8a47;
+    --ink: #1a1a1a;
+    --ink-mid: #444;
+    --ink-light: #888;
+    --border: #d4d0c8;
+    --bg: #faf8f4;
+    --pot1: #1a3a5c;
+    --pot2: #5c3a1a;
+    --pot3: #5c1a3a;
+    --pot4: #2d5a2d;
+    --pot5: #3a1a5c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.6; }
+
+  @media print {
+    .no-print { display: none !important; }
+    body { background: white; font-size: 12px; }
+    .hero { background: var(--green) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pot-section-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .group-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .legend-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  .hero { background: var(--green); color: white; padding: 48px 48px 36px; position: relative; overflow: hidden; }
+  .hero::before { content: '⚽'; position: absolute; right: 40px; top: 16px; font-size: 120px; opacity: 0.07; line-height: 1; }
+  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 10px; }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: 60px; line-height: 0.95; letter-spacing: 0.02em; color: white; margin-bottom: 14px; }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub { font-size: 15px; color: rgba(255,255,255,0.7); max-width: 520px; font-weight: 300; }
+
+  .page-wrap { max-width: 960px; margin: 0 auto; padding: 40px 32px; }
+
+  h2 { font-family: 'Bebas Neue', sans-serif; font-size: 34px; letter-spacing: 0.04em; color: var(--green); margin-bottom: 6px; }
+  .section-intro { font-size: 14px; color: var(--ink-light); margin-bottom: 28px; }
+
+  /* POT LEGEND */
+  .pot-legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 32px; }
+  .legend-card { border-radius: 8px; padding: 14px 16px; color: white; }
+  .legend-card h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; margin-bottom: 4px; }
+  .legend-card .pot-name { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.04em; line-height: 1; margin-bottom: 8px; }
+  .legend-pts { display: flex; gap: 12px; font-family: 'DM Mono', monospace; font-size: 12px; }
+  .legend-pts .w { color: #a8e6b8; }
+  .legend-pts .l { color: #f4a8a8; }
+  .lc1 { background: var(--pot1); }
+  .lc2 { background: var(--pot2); }
+  .lc3 { background: var(--pot3); }
+  .lc4 { background: var(--pot4); }
+  .lc5 { background: var(--pot5); }
+
+  /* MULTIPLIER BAR */
+  .mult-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+  .mult-badge { border-radius: 8px; padding: 10px 16px; text-align: center; color: white; flex: 1; min-width: 120px; }
+  .mult-badge .phase { font-size: 10px; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px; }
+  .mult-badge .mult { font-family: 'Bebas Neue', sans-serif; font-size: 32px; line-height: 1; }
+  .mult-badge .desc { font-size: 10px; opacity: 0.7; margin-top: 3px; }
+  .mb1 { background: #4a7c59; }
+  .mb2 { background: #2a5298; }
+  .mb3 { background: #8b1a1a; }
+
+  /* FULL POINTS TABLE */
+  .points-table-wrap { background: white; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+  .pot-section-header { display: flex; align-items: center; gap: 12px; padding: 10px 18px; color: white; }
+  .pot-section-header h3 { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em; font-weight: 400; }
+  .pot-section-header .pts-badge { margin-left: auto; font-family: 'DM Mono', monospace; font-size: 11px; background: rgba(255,255,255,0.2); padding: 3px 10px; border-radius: 20px; }
+  .ph1 { background: var(--pot1); }
+  .ph2 { background: var(--pot2); }
+  .ph3 { background: var(--pot3); }
+  .ph4 { background: var(--pot4); }
+  .ph5 { background: var(--pot5); }
+
+  .pts-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .pts-table th { background: #f5f3ee; padding: 7px 18px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-light); border-bottom: 1px solid var(--border); }
+  .pts-table th.r { text-align: right; }
+  .pts-table td { padding: 8px 18px; border-bottom: 1px solid #f0ede6; color: var(--ink); }
+  .pts-table tr:last-child td { border-bottom: none; }
+  .pts-table tr:hover td { background: #faf8f2; }
+  .pts-table td.r { text-align: right; }
+  .win-val { font-family: 'DM Mono', monospace; font-weight: 500; color: var(--green-mid); }
+  .loss-val { font-family: 'DM Mono', monospace; font-weight: 500; color: #b52a2a; }
+
+  /* GROUPS */
+  .groups-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-bottom: 48px; }
+  .group-card { background: white; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .group-header { background: var(--green); color: white; padding: 8px 14px; display: flex; align-items: baseline; gap: 10px; }
+  .group-letter { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.04em; line-height: 1; }
+  .group-label { font-size: 11px; opacity: 0.7; letter-spacing: 0.06em; text-transform: uppercase; }
+  .group-team-row { display: flex; align-items: center; justify-content: space-between; padding: 7px 14px; border-bottom: 1px solid #f0ede6; font-size: 13px; }
+  .group-team-row:last-child { border-bottom: none; }
+  .team-name { font-weight: 400; color: var(--ink); }
+  .pot-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 7px; flex-shrink: 0; }
+  .pd1 { background: var(--pot1); }
+  .pd2 { background: var(--pot2); }
+  .pd3 { background: var(--pot3); }
+  .pd4 { background: var(--pot4); }
+  .pd5 { background: var(--pot5); }
+  .team-pts { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-light); white-space: nowrap; }
+
+  .print-btn { display: inline-block; background: var(--green); color: white; border: none; padding: 10px 22px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; border-radius: 6px; cursor: pointer; text-transform: uppercase; margin-bottom: 32px; }
+  .print-btn:hover { background: var(--green-mid); }
+
+  footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 20px; font-size: 12px; font-family: 'DM Mono', monospace; letter-spacing: 0.06em; margin-top: 40px; }
+  footer span { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">2026 FIFA World Cup Pool</div>
+  <h1>Groups &amp;<br><span>Points</span></h1>
+  <p class="hero-sub">Reference sheet — all 48 teams, pot assignments, point values, and group matchups.</p>
+</div>
+
+<div class="page-wrap">
+
+  <button class="print-btn no-print" onclick="window.print()">🖨 Print this page</button>
+
+  <!-- POT LEGEND -->
+  <h2>The Five Pots</h2>
+  <p class="section-intro">Pick one winner and one loser from each pot. All teams in a pot earn the same points per match.</p>
+  <div style="background:#1a5c2a;border-radius:8px;padding:12px 20px;margin-bottom:20px;display:flex;align-items:center;gap:14px;">
+    <div style="font-size:28px;line-height:1;">🏆</div>
+    <div>
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#E8C97A;margin-bottom:2px;">The Prize</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:white;letter-spacing:0.04em;line-height:1;">World Soccer Gift Pack</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.65);font-weight:300;">Awarded to the player with the most points after the Final · No entry fee · Don't expect too much 😄</div>
+    </div>
+  </div>
+
+  <div class="pot-legend">
+    <div class="legend-card lc1"><h4>Pot 1</h4><div class="pot-name">Elite</div><div class="legend-pts"><span class="w">Win: 10</span><span class="l">Loss: 50</span></div></div>
+    <div class="legend-card lc2"><h4>Pot 2</h4><div class="pot-name">Dark Horses</div><div class="legend-pts"><span class="w">Win: 50</span><span class="l">Loss: 25</span></div></div>
+    <div class="legend-card lc3"><h4>Pot 3</h4><div class="pot-name">Longshots</div><div class="legend-pts"><span class="w">Win: 100</span><span class="l">Loss: 15</span></div></div>
+    <div class="legend-card lc4"><h4>Pot 4</h4><div class="pot-name">Outsiders</div><div class="legend-pts"><span class="w">Win: 200</span><span class="l">Loss: 10</span></div></div>
+    <div class="legend-card lc5"><h4>Pot 5</h4><div class="pot-name">Wildcards</div><div class="legend-pts"><span class="w">Win: 350</span><span class="l">Loss: 5</span></div></div>
+  </div>
+
+  <!-- MULTIPLIERS -->
+  <h2>Round Multipliers</h2>
+  <p class="section-intro">Points are multiplied by the stage of the tournament. Group stage scores at face value.</p>
+
+  <div class="mult-row">
+    <div class="mult-badge mb1"><div class="phase">Group Stage</div><div class="mult">1×</div><div class="desc">72 matches</div></div>
+    <div class="mult-badge mb2"><div class="phase">All Knockout Rounds</div><div class="mult">3×</div><div class="desc">R32 through Semifinal</div></div>
+    <div class="mult-badge mb3"><div class="phase">The Final</div><div class="mult">5×</div><div class="desc">One match · max stakes</div></div>
+  </div>
+  <p style="font-size:13px;color:#888;margin-bottom:32px;">🟠 <strong>Extra time &amp; penalty shootouts:</strong> In knockout rounds a win by ET or PKs counts as a win for the advancing team and a loss for the eliminated team. Points are scored normally at the applicable multiplier.</p>
+
+  <!-- FULL POINTS TABLE -->
+  <h2>Full Points Table</h2>
+  <p class="section-intro">All 48 teams by pot. Points shown are base values per match — multiply by round multiplier for actual score.</p>
+
+  <div class="points-table-wrap">
+    <div class="pot-section-header ph1"><h3>POT 1 — ELITE</h3><span class="pts-badge">Win 10 · Loss 50</span></div>
+    <table class="pts-table">
+      <thead><tr><th>Team</th><th>Group</th><th class="r">Win pts</th><th class="r">Loss pts</th></tr></thead>
+      <tbody>
+        <tr><td>Spain</td><td>H</td><td class="r win-val">10</td><td class="r loss-val">50</td></tr>
+        <tr><td>France</td><td>I</td><td class="r win-val">10</td><td class="r loss-val">50</td></tr>
+        <tr><td>England</td><td>L</td><td class="r win-val">10</td><td class="r loss-val">50</td></tr>
+        <tr><td>Brazil</td><td>C</td><td class="r win-val">10</td><td class="r loss-val">50</td></tr>
+        <tr><td>Argentina</td><td>J</td><td class="r win-val">10</td><td class="r loss-val">50</td></tr>
+        <tr><td>Portugal</td><td>K</td><td class="r win-val">10</td><td class="r loss-val">50</td></tr>
+        <tr><td>Germany</td><td>E</td><td class="r win-val">10</td><td class="r loss-val">50</td></tr>
+        <tr><td>Netherlands</td><td>F</td><td class="r win-val">10</td><td class="r loss-val">50</td></tr>
+        <tr><td>Belgium</td><td>G</td><td class="r win-val">10</td><td class="r loss-val">50</td></tr>
+        <tr><td>Norway</td><td>I</td><td class="r win-val">10</td><td class="r loss-val">50</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="points-table-wrap">
+    <div class="pot-section-header ph2"><h3>POT 2 — DARK HORSES</h3><span class="pts-badge">Win 50 · Loss 25</span></div>
+    <table class="pts-table">
+      <thead><tr><th>Team</th><th>Group</th><th class="r">Win pts</th><th class="r">Loss pts</th></tr></thead>
+      <tbody>
+        <tr><td>Colombia</td><td>K</td><td class="r win-val">50</td><td class="r loss-val">25</td></tr>
+        <tr><td>Uruguay</td><td>H</td><td class="r win-val">50</td><td class="r loss-val">25</td></tr>
+        <tr><td>USA</td><td>D</td><td class="r win-val">50</td><td class="r loss-val">25</td></tr>
+        <tr><td>Switzerland</td><td>B</td><td class="r win-val">50</td><td class="r loss-val">25</td></tr>
+        <tr><td>Mexico</td><td>A</td><td class="r win-val">50</td><td class="r loss-val">25</td></tr>
+        <tr><td>Croatia</td><td>L</td><td class="r win-val">50</td><td class="r loss-val">25</td></tr>
+        <tr><td>Morocco</td><td>C</td><td class="r win-val">50</td><td class="r loss-val">25</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="points-table-wrap">
+    <div class="pot-section-header ph3"><h3>POT 3 — LONGSHOTS</h3><span class="pts-badge">Win 100 · Loss 15</span></div>
+    <table class="pts-table">
+      <thead><tr><th>Team</th><th>Group</th><th class="r">Win pts</th><th class="r">Loss pts</th></tr></thead>
+      <tbody>
+        <tr><td>Turkey</td><td>D</td><td class="r win-val">100</td><td class="r loss-val">15</td></tr>
+        <tr><td>Japan</td><td>F</td><td class="r win-val">100</td><td class="r loss-val">15</td></tr>
+        <tr><td>Ecuador</td><td>E</td><td class="r win-val">100</td><td class="r loss-val">15</td></tr>
+        <tr><td>Austria</td><td>J</td><td class="r win-val">100</td><td class="r loss-val">15</td></tr>
+        <tr><td>Senegal</td><td>I</td><td class="r win-val">100</td><td class="r loss-val">15</td></tr>
+        <tr><td>Sweden</td><td>F</td><td class="r win-val">100</td><td class="r loss-val">15</td></tr>
+        <tr><td>Scotland</td><td>C</td><td class="r win-val">100</td><td class="r loss-val">15</td></tr>
+        <tr><td>Ivory Coast</td><td>E</td><td class="r win-val">100</td><td class="r loss-val">15</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="points-table-wrap">
+    <div class="pot-section-header ph4"><h3>POT 4 — OUTSIDERS</h3><span class="pts-badge">Win 200 · Loss 10</span></div>
+    <table class="pts-table">
+      <thead><tr><th>Team</th><th>Group</th><th class="r">Win pts</th><th class="r">Loss pts</th></tr></thead>
+      <tbody>
+        <tr><td>Canada</td><td>B</td><td class="r win-val">200</td><td class="r loss-val">10</td></tr>
+        <tr><td>Ghana</td><td>L</td><td class="r win-val">200</td><td class="r loss-val">10</td></tr>
+        <tr><td>Paraguay</td><td>D</td><td class="r win-val">200</td><td class="r loss-val">10</td></tr>
+        <tr><td>Egypt</td><td>G</td><td class="r win-val">200</td><td class="r loss-val">10</td></tr>
+        <tr><td>Algeria</td><td>J</td><td class="r win-val">200</td><td class="r loss-val">10</td></tr>
+        <tr><td>Bosnia &amp; Herz.</td><td>B</td><td class="r win-val">200</td><td class="r loss-val">10</td></tr>
+        <tr><td>South Korea</td><td>A</td><td class="r win-val">200</td><td class="r loss-val">10</td></tr>
+        <tr><td>Czechia</td><td>A</td><td class="r win-val">200</td><td class="r loss-val">10</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="points-table-wrap">
+    <div class="pot-section-header ph5"><h3>POT 5 — WILDCARDS</h3><span class="pts-badge">Win 350 · Loss 5</span></div>
+    <table class="pts-table">
+      <thead><tr><th>Team</th><th>Group</th><th class="r">Win pts</th><th class="r">Loss pts</th></tr></thead>
+      <tbody>
+        <tr><td>Iran</td><td>G</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>DR Congo</td><td>K</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>Tunisia</td><td>F</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>Australia</td><td>D</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>Haiti</td><td>C</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>Panama</td><td>L</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>Qatar</td><td>B</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>Saudi Arabia</td><td>H</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>South Africa</td><td>A</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>New Zealand</td><td>G</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>Cape Verde</td><td>H</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>Iraq</td><td>I</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>Jordan</td><td>J</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>Curacao</td><td>E</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+        <tr><td>Uzbekistan</td><td>K</td><td class="r win-val">350</td><td class="r loss-val">5</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GROUPS -->
+  <h2>Groups A – L</h2>
+  <p class="section-intro">Colored dots indicate each team's pot. Points shown as Win / Loss base values per match.</p>
+
+  <div class="groups-grid">
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">A</span><span class="group-label">Group A</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd2"></span><span class="team-name">Mexico</span></span><span class="team-pts">50 / 25</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd4"></span><span class="team-name">South Korea</span></span><span class="team-pts">200 / 10</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">South Africa</span></span><span class="team-pts">350 / 5</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd4"></span><span class="team-name">Czechia</span></span><span class="team-pts">200 / 10</span></div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">B</span><span class="group-label">Group B</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd2"></span><span class="team-name">Switzerland</span></span><span class="team-pts">50 / 25</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd4"></span><span class="team-name">Canada</span></span><span class="team-pts">200 / 10</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd4"></span><span class="team-name">Bosnia &amp; Herz.</span></span><span class="team-pts">200 / 10</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Qatar</span></span><span class="team-pts">350 / 5</span></div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">C</span><span class="group-label">Group C</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd1"></span><span class="team-name">Brazil</span></span><span class="team-pts">10 / 50</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd2"></span><span class="team-name">Morocco</span></span><span class="team-pts">50 / 25</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd3"></span><span class="team-name">Scotland</span></span><span class="team-pts">100 / 15</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Haiti</span></span><span class="team-pts">350 / 5</span></div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">D</span><span class="group-label">Group D</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd2"></span><span class="team-name">USA</span></span><span class="team-pts">50 / 25</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd3"></span><span class="team-name">Turkey</span></span><span class="team-pts">100 / 15</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd4"></span><span class="team-name">Paraguay</span></span><span class="team-pts">200 / 10</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Australia</span></span><span class="team-pts">350 / 5</span></div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">E</span><span class="group-label">Group E</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd1"></span><span class="team-name">Germany</span></span><span class="team-pts">10 / 50</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd3"></span><span class="team-name">Ecuador</span></span><span class="team-pts">100 / 15</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd3"></span><span class="team-name">Ivory Coast</span></span><span class="team-pts">100 / 15</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Curacao</span></span><span class="team-pts">350 / 5</span></div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">F</span><span class="group-label">Group F</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd1"></span><span class="team-name">Netherlands</span></span><span class="team-pts">10 / 50</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd3"></span><span class="team-name">Japan</span></span><span class="team-pts">100 / 15</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd3"></span><span class="team-name">Sweden</span></span><span class="team-pts">100 / 15</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Tunisia</span></span><span class="team-pts">350 / 5</span></div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">G</span><span class="group-label">Group G</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd1"></span><span class="team-name">Belgium</span></span><span class="team-pts">10 / 50</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd4"></span><span class="team-name">Egypt</span></span><span class="team-pts">200 / 10</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Iran</span></span><span class="team-pts">350 / 5</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">New Zealand</span></span><span class="team-pts">350 / 5</span></div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">H</span><span class="group-label">Group H</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd1"></span><span class="team-name">Spain</span></span><span class="team-pts">10 / 50</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd2"></span><span class="team-name">Uruguay</span></span><span class="team-pts">50 / 25</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Saudi Arabia</span></span><span class="team-pts">350 / 5</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Cape Verde</span></span><span class="team-pts">350 / 5</span></div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">I</span><span class="group-label">Group I</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd1"></span><span class="team-name">France</span></span><span class="team-pts">10 / 50</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd1"></span><span class="team-name">Norway</span></span><span class="team-pts">10 / 50</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd3"></span><span class="team-name">Senegal</span></span><span class="team-pts">100 / 15</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Iraq</span></span><span class="team-pts">350 / 5</span></div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">J</span><span class="group-label">Group J</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd1"></span><span class="team-name">Argentina</span></span><span class="team-pts">10 / 50</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd3"></span><span class="team-name">Austria</span></span><span class="team-pts">100 / 15</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd4"></span><span class="team-name">Algeria</span></span><span class="team-pts">200 / 10</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Jordan</span></span><span class="team-pts">350 / 5</span></div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">K</span><span class="group-label">Group K</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd1"></span><span class="team-name">Portugal</span></span><span class="team-pts">10 / 50</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd2"></span><span class="team-name">Colombia</span></span><span class="team-pts">50 / 25</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">DR Congo</span></span><span class="team-pts">350 / 5</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Uzbekistan</span></span><span class="team-pts">350 / 5</span></div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-header"><span class="group-letter">L</span><span class="group-label">Group L</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd1"></span><span class="team-name">England</span></span><span class="team-pts">10 / 50</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd2"></span><span class="team-name">Croatia</span></span><span class="team-pts">50 / 25</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd4"></span><span class="team-name">Ghana</span></span><span class="team-pts">200 / 10</span></div>
+      <div class="group-team-row"><span><span class="pot-dot pd5"></span><span class="team-name">Panama</span></span><span class="team-pts">350 / 5</span></div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <span>2026 FIFA WORLD CUP POOL</span> &nbsp;·&nbsp; June 11 – July 19, 2026 &nbsp;·&nbsp; USA · Canada · Mexico
+</footer>
+
+</body>
+</html>
