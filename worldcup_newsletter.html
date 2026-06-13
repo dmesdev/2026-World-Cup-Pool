@@ -35,7 +35,12 @@
   <div class="hero-right">Group Stage · Day 3<br>Multiplier: 1×</div>
 </div>
 <div class="wrap">
-  <h2 style="margin-top:18px;">Today's Action — June 13</h2>
+  <div class="lb-header" style="display:flex;align-items:center;justify-content:space-between;">
+    <h2 style="margin-top:18px;margin-bottom:0;">Today's Action — June 13</h2>
+    <button class="refresh-btn" style="display:inline-flex;align-items:center;gap:6px;background:#1a5c2a;color:white;border:1px solid #2d8a47;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;" onclick="(function(btn){var s=btn.querySelector('.spin');s.style.transform='rotate(360deg)';setTimeout(function(){s.style.transition='none';s.style.transform='';setTimeout(function(){s.style.transition='transform 0.4s';},50);},400);window.location.reload(true);}).call(null,this)">
+      <span class="spin" style="display:inline-block;transition:transform 0.4s;">↻</span> Refresh
+    </button>
+  </div>
   <p class="intro">Four group games today — here's who's got skin in the game on each one (group stage picks count 1×). The nightcap closes out Matchday 1 for USA's group. Good luck everyone! 🏆</p>
   <div class="legend">
     <div><span class="sw" style="background:#e8f5ec;border:1px solid #b8dfc4;"></span>Picked to <b>win</b></div>
