@@ -133,7 +133,107 @@
       "p4l": "Ghana",
       "p5w": "Jordan",
       "p5l": "Haiti"
+    },
+    {
+      "name": "Matt Wedemeier",
+      "messi": "4",
+      "p1w": "France",
+      "p1l": "Norway",
+      "p2w": "Croatia",
+      "p2l": "Switzerland",
+      "p3w": "Senegal",
+      "p3l": "Scotland",
+      "p4w": "Canada",
+      "p4l": "Bosnia",
+      "p5w": "Australia",
+      "p5l": "Jordan"
+    },
+    {
+      "name": "John McCormick",
+      "messi": "3",
+      "p1w": "Spain",
+      "p1l": "Netherlands",
+      "p2w": "Croatia",
+      "p2l": "Uruguay",
+      "p3w": "Ecuador",
+      "p3l": "Senegal",
+      "p4w": "Canada",
+      "p4l": "Algeria",
+      "p5w": "Panama",
+      "p5l": "Curacao"
+    },
+    {
+      "name": "Monica Mestres",
+      "messi": "4",
+      "p1w": "Argentina",
+      "p1l": "Netherlands",
+      "p2w": "Morocco",
+      "p2l": "Croatia",
+      "p3w": "Turkey",
+      "p3l": "Scotland",
+      "p4w": "Canada",
+      "p4l": "Ghana",
+      "p5w": "Australia",
+      "p5l": "Tunisia"
+    },
+    {
+      "name": "Maria Elena Martinez",
+      "messi": "8",
+      "p1w": "France",
+      "p1l": "England",
+      "p2w": "Morocco",
+      "p2l": "Switzerland",
+      "p3w": "Turkey",
+      "p3l": "Scotland",
+      "p4w": "Canada",
+      "p4l": "Bosnia",
+      "p5w": "Iran",
+      "p5l": "DR Congo"
+    },
+    {
+      "name": "Rob and Monica White",
+      "messi": "7",
+      "p1w": "England",
+      "p1l": "Belgium",
+      "p2w": "Morocco",
+      "p2l": "Croatia",
+      "p3w": "Japan",
+      "p3l": "Senegal",
+      "p4w": "Canada",
+      "p4l": "Ghana",
+      "p5w": "Australia",
+      "p5l": "Panama"
+    },
+    {
+      "name": "Steve Mestres",
+      "messi": "4",
+      "p1w": "Spain",
+      "p1l": "Belgium",
+      "p2w": "Uruguay",
+      "p2l": "Croatia",
+      "p3w": "Japan",
+      "p3l": "Ivory Coast",
+      "p4w": "Paraguay",
+      "p4l": "Czechia",
+      "p5w": "Tunisia",
+      "p5l": "Uzbekistan"
     }
   ],
-  "results": {}
+  "results": {
+    "A1": {
+      "winner": "Mexico",
+      "loser": "South Africa"
+    },
+    "A2": {
+      "winner": "South Korea",
+      "loser": "Czechia"
+    },
+    "B1": {
+      "draw": true
+    },
+    "D1": {
+      "winner": "USA",
+      "loser": "Paraguay"
+    }
+  }
 }
