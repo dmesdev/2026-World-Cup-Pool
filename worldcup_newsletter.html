@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pool Newsletter - 06-17-2026</title>
+<title>Pool Newsletter - 06-18-2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   body{font-family:'DM Sans',sans-serif;background:#faf8f4;color:#1a1a1a;margin:0;padding:0;font-size:14px;}
@@ -14,34 +14,43 @@
   .match-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
   .teams{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.03em;}
   .grp{font-size:10px;background:#eee;color:#444;padding:2px 8px;border-radius:3px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;}
-  .time{font-family:'DM Mono',monospace;font-size:12px;color:#888;margin-bottom:10px;}
+  .time-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:6px;}
+  .time{font-family:'DM Mono',monospace;font-size:12px;color:#888;}
+  .pts-row{display:flex;gap:6px;flex-wrap:wrap;font-family:'DM Mono',monospace;font-size:11px;}
+  .pts-chip{padding:2px 8px;border-radius:10px;}
+  .pts-chip.win{background:#e8f5ec;color:#1a5c2a;}
+  .pts-chip.loss{background:#fff0f0;color:#b52a2a;}
   .picks-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
   .pick{font-size:12px;border-radius:4px;padding:3px 9px;}
   .pick.w{background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;}
   .pick.l{background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;}
   .pick b{font-weight:700;}
+  .pick .pv{font-family:'DM Mono',monospace;font-size:10px;opacity:0.75;margin-left:4px;}
   .note{font-size:12px;color:#888;margin-top:6px;}
   .legend{display:flex;gap:14px;font-size:12px;color:#666;margin-bottom:6px;flex-wrap:wrap;}
   .legend span.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px;}
   footer{background:#1a1a1a;color:rgba(255,255,255,0.4);text-align:center;padding:16px;font-size:11px;font-family:'DM Mono',monospace;margin-top:32px;}
   footer span{color:#C9A84C;}
   .intro{font-size:13px;color:#444;line-height:1.5;margin-bottom:8px;}
+  .refresh-btn{display:inline-flex;align-items:center;gap:6px;background:#1a5c2a;color:white;border:1px solid #2d8a47;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;}
+  .refresh-btn .spin{display:inline-block;transition:transform 0.4s;}
+  .lb-header{display:flex;align-items:center;justify-content:space-between;}
 </style></head><body>
 <div class="hero">
   <div>
     <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#E8C97A;margin-bottom:2px;">2026 FIFA World Cup Pool</div>
-    <h1>Pool <span>Newsletter</span> — 06-17-2026</h1>
+    <h1>Pool <span>Newsletter</span> — 06-18-2026</h1>
   </div>
-  <div class="hero-right">Group Stage · Day 7<br>Multiplier: 1×</div>
+  <div class="hero-right">Group Stage · Day 8<br>Multiplier: 1×</div>
 </div>
 <div class="wrap">
-  <div class="lb-header" style="display:flex;align-items:center;justify-content:space-between;">
-    <h2 style="margin-top:18px;margin-bottom:0;">Today's Action — June 17</h2>
-    <button class="refresh-btn" style="display:inline-flex;align-items:center;gap:6px;background:#1a5c2a;color:white;border:1px solid #2d8a47;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;" onclick="(function(btn){var s=btn.querySelector('.spin');s.style.transform='rotate(360deg)';setTimeout(function(){s.style.transition='none';s.style.transform='';setTimeout(function(){s.style.transition='transform 0.4s';},50);},400);window.location.reload(true);}).call(null,this)">
-      <span class="spin" style="display:inline-block;transition:transform 0.4s;">↻</span> Refresh
+  <div class="lb-header">
+    <h2 style="margin-top:18px;margin-bottom:0;">Today's Action — June 18</h2>
+    <button class="refresh-btn" onclick="(function(btn){var s=btn.querySelector('.spin');s.style.transform='rotate(360deg)';setTimeout(function(){s.style.transition='none';s.style.transform='';setTimeout(function(){s.style.transition='transform 0.4s';},50);},400);window.location.reload(true);}).call(null,this)">
+      <span class="spin">↻</span> Refresh
     </button>
   </div>
-  <p class="intro">Four group games today spanning Groups K and L. Reminder: draws score no points for anyone. Good luck! 🏆</p>
+  <p class="intro">Four group games today spanning Groups A and B, listed in kickoff order. Point chips show what's on offer for a win or loss pick on each team. Reminder: draws score no points for anyone. Good luck! 🏆</p>
   <div class="legend">
     <div><span class="sw" style="background:#e8f5ec;border:1px solid #b8dfc4;"></span>Picked to <b>win</b></div>
     <div><span class="sw" style="background:#fff0f0;border:1px solid #f4c4c4;"></span>Picked to <b>lose</b></div>
@@ -49,78 +58,102 @@
 
   <div class="match">
     <div class="match-hdr">
-      <div class="teams">🇵🇹 Portugal <span style="color:#888;font-weight:400;">vs</span> DR Congo 🇨🇩</div>
-      <div class="grp">Group K</div>
+      <div class="teams">🇨🇿 Czechia <span style="color:#888;font-weight:400;">vs</span> South Africa 🇿🇦</div>
+      <div class="grp">Group A</div>
     </div>
-    <div class="time">1:00 PM ET · SoFi Stadium, Inglewood CA</div>
+    <div class="time-row">
+      <div class="time">⏰ 11:00 AM CT</div>
+      <div class="pts-row">
+        <span class="pts-chip win">Czechia win: 200</span>
+        <span class="pts-chip loss">Czechia loss: 10</span>
+        <span class="pts-chip win">S. Africa win: 350</span>
+        <span class="pts-chip loss">S. Africa loss: 5</span>
+      </div>
+    </div>
     <div class="picks-row">
-      <div class="pick l"><b>Maria Elena Martinez</b> — DR Congo to lose</div>
+      <div class="pick l"><b>Steve Mestres</b> — Czechia to lose <span class="pv">+10</span></div>
     </div>
   </div>
 
   <div class="match">
     <div class="match-hdr">
-      <div class="teams">🇺🇿 Uzbekistan <span style="color:#888;font-weight:400;">vs</span> Colombia 🇨🇴</div>
-      <div class="grp">Group K</div>
+      <div class="teams">🇨🇭 Switzerland <span style="color:#888;font-weight:400;">vs</span> Bosnia 🇧🇦</div>
+      <div class="grp">Group B</div>
     </div>
-    <div class="time">10:00 PM ET · Levi's Stadium, Santa Clara CA</div>
+    <div class="time-row">
+      <div class="time">⏰ 2:00 PM CT</div>
+      <div class="pts-row">
+        <span class="pts-chip win">Switzerland win: 50</span>
+        <span class="pts-chip loss">Switzerland loss: 25</span>
+        <span class="pts-chip win">Bosnia win: 200</span>
+        <span class="pts-chip loss">Bosnia loss: 10</span>
+      </div>
+    </div>
     <div class="picks-row">
-      <div class="pick w"><b>Camden Sabathne</b> — Colombia to win</div>
-      <div class="pick w"><b>Payton Sabathne</b> — Colombia to win</div>
-      <div class="pick w"><b>Corge Umlauf</b> — Colombia to win</div>
-      <div class="pick w"><b>Deb Voegeli</b> — Colombia to win</div>
-      <div class="pick l"><b>Steve Mestres</b> — Uzbekistan to lose</div>
+      <div class="pick l"><b>Tim Mestres</b> — Switzerland to lose <span class="pv">+25</span></div>
+      <div class="pick l"><b>Matt Wedemeier</b> — Switzerland to lose <span class="pv">+25</span></div>
+      <div class="pick l"><b>Maria Elena Martinez</b> — Switzerland to lose <span class="pv">+25</span></div>
+      <div class="pick l"><b>Tim Mestres</b> — Bosnia to lose <span class="pv">+10</span></div>
+      <div class="pick l"><b>Matt Wedemeier</b> — Bosnia to lose <span class="pv">+10</span></div>
+      <div class="pick l"><b>Maria Elena Martinez</b> — Bosnia to lose <span class="pv">+10</span></div>
     </div>
   </div>
 
   <div class="match">
     <div class="match-hdr">
-      <div class="teams">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England <span style="color:#888;font-weight:400;">vs</span> Croatia 🇭🇷</div>
-      <div class="grp">Group L</div>
+      <div class="teams">🇨🇦 Canada <span style="color:#888;font-weight:400;">vs</span> Qatar 🇶🇦</div>
+      <div class="grp">Group B</div>
     </div>
-    <div class="time">4:00 PM ET · AT&amp;T Stadium, Arlington TX</div>
+    <div class="time-row">
+      <div class="time">⏰ 5:00 PM CT</div>
+      <div class="pts-row">
+        <span class="pts-chip win">Canada win: 200</span>
+        <span class="pts-chip loss">Canada loss: 10</span>
+        <span class="pts-chip win">Qatar win: 350</span>
+        <span class="pts-chip loss">Qatar loss: 5</span>
+      </div>
+    </div>
     <div class="picks-row">
-      <div class="pick w"><b>Rob &amp; Monica White</b> — England to win</div>
-      <div class="pick w"><b>John McCormick</b> — Croatia to win</div>
-      <div class="pick w"><b>Matt Wedemeier</b> — Croatia to win</div>
-      <div class="pick l"><b>Maria Elena Martinez</b> — England to lose</div>
-      <div class="pick l"><b>Roy Roncal</b> — England to lose</div>
-      <div class="pick l"><b>Monica Mestres</b> — Croatia to lose</div>
-      <div class="pick l"><b>Steve Mestres</b> — Croatia to lose</div>
-      <div class="pick l"><b>Roy Roncal</b> — Croatia to lose</div>
-      <div class="pick l"><b>James Sabathne</b> — Croatia to lose</div>
-      <div class="pick l"><b>Payton Sabathne</b> — Croatia to lose</div>
-      <div class="pick l"><b>Deb Voegeli</b> — Croatia to lose</div>
-      <div class="pick l"><b>Rob &amp; Monica White</b> — Croatia to lose</div>
+      <div class="pick w"><b>Rob Foley</b> — Canada to win <span class="pv">+200</span></div>
+      <div class="pick w"><b>Roy Roncal</b> — Canada to win <span class="pv">+200</span></div>
+      <div class="pick w"><b>Tim Mestres</b> — Canada to win <span class="pv">+200</span></div>
+      <div class="pick w"><b>James Sabathne</b> — Canada to win <span class="pv">+200</span></div>
+      <div class="pick w"><b>Payton Sabathne</b> — Canada to win <span class="pv">+200</span></div>
+      <div class="pick w"><b>Matt Wedemeier</b> — Canada to win <span class="pv">+200</span></div>
+      <div class="pick w"><b>John McCormick</b> — Canada to win <span class="pv">+200</span></div>
+      <div class="pick w"><b>Monica Mestres</b> — Canada to win <span class="pv">+200</span></div>
+      <div class="pick w"><b>Maria Elena Martinez</b> — Canada to win <span class="pv">+200</span></div>
+      <div class="pick w"><b>Rob and Monica White</b> — Canada to win <span class="pv">+200</span></div>
+      <div class="pick l"><b>Dave Mestres</b> — Canada to lose <span class="pv">+10</span></div>
+      <div class="pick l"><b>Corge Umlauf</b> — Qatar to lose <span class="pv">+5</span></div>
     </div>
   </div>
 
   <div class="match">
     <div class="match-hdr">
-      <div class="teams">🇬🇭 Ghana <span style="color:#888;font-weight:400;">vs</span> Panama 🇵🇦</div>
-      <div class="grp">Group L</div>
+      <div class="teams">🇲🇽 Mexico <span style="color:#888;font-weight:400;">vs</span> South Korea 🇰🇷</div>
+      <div class="grp">Group A</div>
     </div>
-    <div class="time">7:00 PM ET · Arrowhead Stadium, Kansas City MO</div>
+    <div class="time-row">
+      <div class="time">⏰ 8:00 PM CT</div>
+      <div class="pts-row">
+        <span class="pts-chip win">Mexico win: 50</span>
+        <span class="pts-chip loss">Mexico loss: 25</span>
+        <span class="pts-chip win">S. Korea win: 200</span>
+        <span class="pts-chip loss">S. Korea loss: 10</span>
+      </div>
+    </div>
     <div class="picks-row">
-      <div class="pick w"><b>Corge Umlauf</b> — Ghana to win</div>
-      <div class="pick w"><b>John McCormick</b> — Panama to win</div>
-      <div class="pick l"><b>Monica Mestres</b> — Ghana to lose</div>
-      <div class="pick l"><b>Roy Roncal</b> — Ghana to lose</div>
-      <div class="pick l"><b>Payton Sabathne</b> — Ghana to lose</div>
-      <div class="pick l"><b>Deb Voegeli</b> — Ghana to lose</div>
-      <div class="pick l"><b>Rob &amp; Monica White</b> — Ghana to lose</div>
-      <div class="pick l"><b>Dave Mestres</b> — Panama to lose</div>
-      <div class="pick l"><b>Roy Roncal</b> — Panama to lose</div>
-      <div class="pick l"><b>Deb Voegeli</b> — Panama to lose</div>
-      <div class="pick l"><b>Rob &amp; Monica White</b> — Panama to lose</div>
+      <div class="pick w"><b>Tim Mestres</b> — Mexico to win <span class="pv">+50</span></div>
+      <div class="pick w"><b>Camden Sabathne</b> — South Korea to win <span class="pv">+200</span></div>
     </div>
   </div>
 
   <h2>What it means</h2>
-  <p class="intro">Portugal–DR Congo has just one pool pick on it — Maria Elena Martinez needs DR Congo to lose, so effectively a Portugal win cashes for Maria Elena. A DR Congo win or draw leaves the pool largely unaffected.</p>
-  <p class="intro">Uzbekistan–Colombia is heavily one-sided — four players (Camden, Payton, Corge, and Deb) all have Colombia to win, and Steve Mestres has Uzbekistan to lose, which amounts to the same thing. A Colombia win is a five-way sweep; an upset by Uzbekistan stings everyone.</p>
-  <p class="intro">England–Croatia is the busiest match of the day with twelve picks. Rob &amp; Monica White need England to win, while Maria Elena and Roy need England to lose. Croatia is the most-picked-against team in the pool today — eight players (Monica, Steve, Roy, James, Payton, Deb, and Rob &amp; Monica White) need Croatia to lose. John McCormick and Matt Wedemeier are the lone Croatia backers. Note that Roy Roncal needs both England to lose and Croatia to lose — an impossible pair, so Roy scores at most one point from this match. Similarly, Rob &amp; Monica White need England to win and Croatia to lose, which is the same result — an England win — so those two picks reinforce each other nicely.</p>
-  <p class="intro">Ghana–Panama rounds out the day with another split. Corge Umlauf needs Ghana to win; five players (Monica, Roy, Payton, Deb, and Rob &amp; Monica White) need Ghana to lose. On the other side, John McCormick needs Panama to win, and four players (Dave, Roy, Deb, and Rob &amp; Monica White) need Panama to lose. Roy, Deb, and Rob &amp; Monica White each have picks on both Ghana to lose and Panama to lose — an impossible combination — so each of them can cash at most one pick from this match.</p>
+  <p class="intro">Czechia–South Africa kicks off the day quietly — only Steve Mestres has a stake, worth 10 points if Czechia loses. A South Africa win or a draw is the only outcome that does anything for the pool, and even then only for Steve.</p>
+  <p class="intro">Switzerland–Bosnia is the afternoon's odd one out: three players — Tim Mestres, Matt Wedemeier, and Maria Elena Martinez — each have <i>both</i> teams picked to lose, which is impossible outside of a draw. Each of them can score at most one of their two picks here — 25 points if Switzerland loses, or 10 if Bosnia loses.</p>
+  <p class="intro">Canada–Qatar is the headline match of the day with twelve picks on the board and the biggest swing in the building. Ten players are riding Canada to win at 200 points each — Rob, Roy, Tim, James, Payton, Matt, John, Monica, Maria Elena, and Rob &amp; Monica White — making this close to a pool-wide consensus pick worth 2,000 combined points if it lands. Dave Mestres is the lone Canada doubter (10 points if they lose), while Corge Umlauf is banking on a Qatar loss (5 points). An upset by Qatar would flip the script for almost everyone.</p>
+  <p class="intro">Mexico–South Korea closes the night with a clean head-to-head: Tim Mestres has Mexico to win for 50 points, while Camden Sabathne has South Korea to win for a much richer 200 points. Only one of them can cash.</p>
 </div>
 <footer><span>2026 FIFA WORLD CUP POOL</span> &nbsp;·&nbsp; June 11 – July 19, 2026 &nbsp;·&nbsp; Commissioner: Dave Mestres · davemestres@yahoo.com</footer>
 </body></html>
