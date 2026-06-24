@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>2026 World Cup Pool — Standings</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body{font-family:'DM Sans',sans-serif;background:#faf8f4;color:#1a1a1a;margin:0;padding:0;font-size:14px;}
+  .hero{background:#1a5c2a;color:white;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #C9A84C;}
+  .hero h1{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.04em;margin:0;}
+  .hero h1 span{color:#C9A84C;}
+  .hero-right{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.65);text-align:right;}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px 24px;}
+  h2{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.04em;color:#1a5c2a;margin-bottom:14px;}
+  .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:20px;}
+  .sc{background:white;border:1px solid #d4d0c8;border-radius:8px;padding:12px 14px;}
+  .sc .l{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px;}
+  .sc .v{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#1a5c2a;line-height:1;}
+  .sc .s{font-size:11px;color:#888;margin-top:2px;}
+  table{width:100%;border-collapse:collapse;background:white;border:1px solid #d4d0c8;border-radius:8px;overflow:hidden;margin-bottom:24px;font-size:13px;}
+  th{background:#1a1a1a;color:rgba(255,255,255,0.75);padding:8px 12px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;}
+  th.r{text-align:right;}
+  td{padding:8px 12px;border-bottom:1px solid #f0ede6;}
+  tr:last-child td{border-bottom:none;}
+  .note{font-size:11px;color:#888;margin-bottom:24px;}
+  .prize{background:#1a5c2a;color:white;border-radius:8px;padding:12px 18px;display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+  .prize .p-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.04em;}
+  .prize .p-sub{font-size:12px;color:rgba(255,255,255,0.65);margin-top:2px;}
+  footer{background:#1a1a1a;color:rgba(255,255,255,0.4);text-align:center;padding:16px;font-size:11px;font-family:'DM Mono',monospace;margin-top:32px;}
+  footer span{color:#C9A84C;}
+  .refresh-btn{display:inline-flex;align-items:center;gap:6px;background:#1a5c2a;color:white;border:1px solid #2d8a47;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:background 0.15s;}
+  .refresh-btn:hover{background:#2d8a47;}
+  .refresh-btn .spin{display:inline-block;transition:transform 0.4s;}
+  .lb-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .lb-header h2{margin-bottom:0;}
+</style></head><body>
+<div class="hero">
+  <div>
+    <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#E8C97A;margin-bottom:2px;">2026 FIFA World Cup Pool</div>
+    <h1>Pool <span>Standings</span></h1>
+  </div>
+  <div class="hero-right">Updated: June 24, 2026<br>48 matches played of 104</div>
+</div>
+<div class="wrap">
+  <div class="prize"><div style="font-size:32px">🏆</div><div><div class="p-name">Prize: World Soccer Gift Pack</div><div class="p-sub">No entry fee · Don't expect too much 😄 · Commissioner: Dave Mestres</div></div></div>
+  <div class="summary">
+    <div class="sc"><div class="l">Players</div><div class="v">15</div></div>
+    <div class="sc"><div class="l">Matches Played</div><div class="v">48</div><div class="s">of 104 total</div></div>
+    <div class="sc"><div class="l">Leader</div><div class="v" style="font-size:18px">Tim Mestres</div><div class="s">795 pts</div></div>
+    <div class="sc"><div class="l">Multipliers</div><div class="v" style="font-size:14px;padding-top:4px">1× 3× 5×</div><div class="s">Group · KO · Final</div></div>
+  </div>
+  <div class="lb-header">
+    <h2>Leaderboard</h2>
+    <button class="refresh-btn" onclick="(function(btn){var s=btn.querySelector('.spin');s.style.transform='rotate(360deg)';setTimeout(function(){s.style.transition='none';s.style.transform='';setTimeout(function(){s.style.transition='transform 0.4s';},50);},400);window.location.reload(true);}).call(null,this)">
+      <span class="spin">↻</span> Refresh
+    </button>
+  </div>
+  <table><thead><tr><th>#</th><th>Player</th><th class="r">Group</th><th class="r">R32</th><th class="r">R16</th><th class="r">QF</th><th class="r">SF</th><th class="r">Final</th><th class="r">Total</th><th>Messi 🐐</th></tr></thead>
+  <tbody><tr style="background:#fffbef;">
+      <td style="border-left:3px solid #C9A84C">🥇</td><td style="font-weight:600">Tim Mestres<span style="font-size:9px;background:#1e6fa8;color:white;padding:1px 4px;border-radius:3px;margin-left:4px;font-weight:700">UCL</span></td>
+      <td style="text-align:right;font-family:monospace">795</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">795</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 1</td>
+    </tr><tr style="background:#eef6fb;">
+      <td style="border-left:3px solid #aaa">🥈</td><td style="font-weight:600">Corge Umlauf<span style="font-size:9px;background:#1e6fa8;color:white;padding:1px 4px;border-radius:3px;margin-left:4px;font-weight:700">UCL</span></td>
+      <td style="text-align:right;font-family:monospace">780</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">780</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 4</td>
+    </tr><tr style="background:#eef6fb;">
+      <td style="border-left:3px solid #a0522d">🥉</td><td style="font-weight:600">Rob and Monica White<span style="font-size:9px;background:#1e6fa8;color:white;padding:1px 4px;border-radius:3px;margin-left:4px;font-weight:700">UCL</span></td>
+      <td style="text-align:right;font-family:monospace">775</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">775</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 7</td>
+    </tr><tr style="background:#eef6fb;">
+      <td style="border-left:3px solid #1e6fa8">4</td><td style="font-weight:600">Monica Mestres<span style="font-size:9px;background:#1e6fa8;color:white;padding:1px 4px;border-radius:3px;margin-left:4px;font-weight:700">UCL</span></td>
+      <td style="text-align:right;font-family:monospace">670</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">670</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 4</td>
+    </tr><tr><td colspan="10" style="padding:0;border:none;">
+      <div style="display:flex;align-items:center;gap:8px;padding:3px 12px;background:#1e6fa822;border-top:2px solid #1e6fa8;border-bottom:1px solid #1e6fa844;">
+        <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#1e6fa8;white-space:nowrap;">Champions League Qualification</span>
+        <div style="flex:1;height:1px;background:#1e6fa844;"></div>
+      </div>
+    </td></tr><tr style="">
+      <td style="">5</td><td style="font-weight:600">Matt Wedemeier</td>
+      <td style="text-align:right;font-family:monospace">655</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">655</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 4</td>
+    </tr><tr style="">
+      <td style="">6</td><td style="font-weight:600">Roy Roncal</td>
+      <td style="text-align:right;font-family:monospace">460</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">460</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 5</td>
+    </tr><tr style="">
+      <td style="">7</td><td style="font-weight:600">Camden Sabathne</td>
+      <td style="text-align:right;font-family:monospace">445</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">445</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 5</td>
+    </tr><tr style="">
+      <td style="">8</td><td style="font-weight:600">Rob Foley</td>
+      <td style="text-align:right;font-family:monospace">405</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">405</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 5</td>
+    </tr><tr style="">
+      <td style="">9</td><td style="font-weight:600">Steve Mestres</td>
+      <td style="text-align:right;font-family:monospace">365</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">365</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 4</td>
+    </tr><tr style="">
+      <td style="">10</td><td style="font-weight:600">Payton Sabathne</td>
+      <td style="text-align:right;font-family:monospace">360</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">360</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 2</td>
+    </tr><tr style="">
+      <td style="">11</td><td style="font-weight:600">Deb Voegeli</td>
+      <td style="text-align:right;font-family:monospace">345</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">345</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 8</td>
+    </tr><tr style="">
+      <td style="">12</td><td style="font-weight:600">John McCormick</td>
+      <td style="text-align:right;font-family:monospace">305</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">305</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 3</td>
+    </tr><tr><td colspan="10" style="padding:0;border:none;">
+      <div style="display:flex;align-items:center;gap:8px;padding:3px 12px;background:#c0392b22;border-top:2px solid #c0392b;border-bottom:1px solid #c0392b44;">
+        <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#c0392b;white-space:nowrap;">Relegation Zone</span>
+        <div style="flex:1;height:1px;background:#c0392b44;"></div>
+      </div>
+    </td></tr><tr style="background:#fff3f3;">
+      <td style="border-left:3px solid #c0392b">13</td><td style="font-weight:600">Maria Elena Martinez<span style="font-size:9px;background:#c0392b;color:white;padding:1px 4px;border-radius:3px;margin-left:4px;font-weight:700">REL</span></td>
+      <td style="text-align:right;font-family:monospace">300</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">300</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 8</td>
+    </tr><tr style="background:#fff3f3;">
+      <td style="border-left:3px solid #c0392b">14</td><td style="font-weight:600">Dave Mestres<span style="font-size:9px;background:#c0392b;color:white;padding:1px 4px;border-radius:3px;margin-left:4px;font-weight:700">REL</span></td>
+      <td style="text-align:right;font-family:monospace">280</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">280</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 4</td>
+    </tr><tr style="background:#fff3f3;">
+      <td style="border-left:3px solid #c0392b">15</td><td style="font-weight:600">James Sabathne<span style="font-size:9px;background:#c0392b;color:white;padding:1px 4px;border-radius:3px;margin-left:4px;font-weight:700">REL</span></td>
+      <td style="text-align:right;font-family:monospace">260</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right;font-family:monospace">0</td>
+      <td style="text-align:right"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#1a5c2a">260</span></td>
+      <td style="font-family:monospace;font-size:12px;color:#888">⚽ 3</td>
+    </tr></tbody></table>
+  <p class="note">Multipliers: Group Stage 1× · All Knockout Rounds 3× · Final 5× · Tiebreaker: closest Messi goal guess · ET/PKs count as a win/loss in knockout rounds</p>
+  <p class="note" style="margin-top:6px;">
+    <span style="display:inline-block;background:#eef6fb;border-left:3px solid #1e6fa8;padding:2px 8px;border-radius:3px;margin-right:8px;font-size:11px;">■ UCL — Champions League qualification (top 4)</span>
+    <span style="display:inline-block;background:#fff3f3;border-left:3px solid #c0392b;padding:2px 8px;border-radius:3px;font-size:11px;">■ REL — Relegation zone (bottom 3)</span>
+  </p>
+  <h2>All Picks</h2>
+  <div style="overflow-x:auto"><table><thead><tr>
+    <th>Player</th><th>P1 Win</th><th>P1 Lose</th><th>P2 Win</th><th>P2 Lose</th><th>P3 Win</th><th>P3 Lose</th><th>P4 Win</th><th>P4 Lose</th><th>P5 Win</th><th>P5 Lose</th><th>Messi</th>
+  </tr></thead><tbody><tr>
+    <td style="font-weight:600">Rob Foley</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">France</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Belgium</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Morocco</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Uruguay</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Japan</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Austria</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Canada</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Algeria</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Iran</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Haiti</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 5</td>
+  </tr><tr>
+    <td style="font-weight:600">Maria Elena Martinez</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">France</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">England</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Morocco</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Switzerland</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Turkey</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Scotland</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Canada</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Bosnia</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Iran</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">DR Congo</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 8</td>
+  </tr><tr>
+    <td style="font-weight:600">John McCormick</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Spain</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Netherlands</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Croatia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Uruguay</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Ecuador</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Senegal</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Canada</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Algeria</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Panama</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Curacao</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 3</td>
+  </tr><tr>
+    <td style="font-weight:600">Dave Mestres</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">France</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Norway</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Morocco</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Uruguay</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Ecuador</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Japan</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Egypt</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Canada</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Saudi Arabia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Panama</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 4</td>
+  </tr><tr>
+    <td style="font-weight:600">Tim Mestres</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Spain</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Argentina</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Mexico</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Switzerland</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Ivory Coast</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Scotland</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Canada</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Bosnia</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Australia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Jordan</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 1</td>
+  </tr><tr>
+    <td style="font-weight:600">Monica Mestres</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Argentina</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Netherlands</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Morocco</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Croatia</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Turkey</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Scotland</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Canada</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Ghana</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Australia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Tunisia</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 4</td>
+  </tr><tr>
+    <td style="font-weight:600">Steve Mestres</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Spain</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Belgium</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Uruguay</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Croatia</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Japan</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Ivory Coast</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Paraguay</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Czechia</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Tunisia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Uzbekistan</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 4</td>
+  </tr><tr>
+    <td style="font-weight:600">Roy Roncal</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Spain</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">England</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">USA</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Croatia</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Sweden</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Ivory Coast</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Canada</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Ghana</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Tunisia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Panama</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 5</td>
+  </tr><tr>
+    <td style="font-weight:600">James Sabathne</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Brazil</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Netherlands</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Uruguay</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Croatia</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Turkey</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Austria</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Canada</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Egypt</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Curacao</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Tunisia</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 3</td>
+  </tr><tr>
+    <td style="font-weight:600">Camden Sabathne</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">France</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Norway</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Colombia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Uruguay</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Japan</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Sweden</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">South Korea</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Egypt</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Iran</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Iraq</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 5</td>
+  </tr><tr>
+    <td style="font-weight:600">Payton Sabathne</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Spain</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Brazil</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Colombia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Croatia</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Ecuador</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Scotland</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Canada</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Ghana</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Jordan</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Haiti</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 2</td>
+  </tr><tr>
+    <td style="font-weight:600">Corge Umlauf</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Netherlands</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Norway</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Colombia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Morocco</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Japan</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Scotland</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Ghana</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Egypt</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Australia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Qatar</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 4</td>
+  </tr><tr>
+    <td style="font-weight:600">Deb Voegeli</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Spain</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Norway</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Colombia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Croatia</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Senegal</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Japan</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Algeria</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Ghana</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Tunisia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Panama</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 8</td>
+  </tr><tr>
+    <td style="font-weight:600">Matt Wedemeier</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">France</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Norway</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Croatia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Switzerland</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Senegal</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Scotland</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Canada</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Bosnia</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Australia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Jordan</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 4</td>
+  </tr><tr>
+    <td style="font-weight:600">Rob and Monica White</td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">England</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Belgium</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Morocco</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Croatia</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Japan</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Senegal</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Canada</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Ghana</span></td>
+    <td><span style="background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;border-radius:4px;padding:1px 6px;font-size:11px">Australia</span></td>
+    <td><span style="background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;border-radius:4px;padding:1px 6px;font-size:11px">Panama</span></td>
+    <td style="font-family:monospace;font-size:12px;color:#888">⚽ 7</td>
+  </tr></tbody></table></div>
+</div>
+<footer><span>2026 FIFA WORLD CUP POOL</span> &nbsp;·&nbsp; June 11 – July 19, 2026 &nbsp;·&nbsp; Commissioner: Dave Mestres · davemestres@yahoo.com</footer>
+</body></html>
