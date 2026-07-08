@@ -3,7 +3,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Pool Newsletter - 07-07-2026</title>
+<title>Pool Newsletter - 07-08-2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   body{font-family:'DM Sans',sans-serif;background:#faf8f4;color:#1a1a1a;margin:0;padding:0;font-size:14px;}
@@ -17,181 +17,151 @@
   .mult-banner .badge{font-family:'Bebas Neue',sans-serif;font-size:36px;color:#C9A84C;line-height:1;}
   .mult-banner .label{font-size:13px;line-height:1.5;}
   .mult-banner .label strong{display:block;font-size:15px;margin-bottom:2px;}
-  .stakes{background:white;border:1px solid #d4d0c8;border-radius:8px;overflow:hidden;margin-bottom:20px;}
-  .stakes-hdr{background:#1a4d8f;color:white;padding:8px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;}
-  .stakes-row{display:grid;grid-template-columns:1.4fr 1fr 1.4fr 80px;padding:8px 14px;border-bottom:1px solid #f0ede6;font-size:12px;align-items:center;}
-  .stakes-row:last-child{border-bottom:none;}
-  .stakes-row.hdr{background:#f5f3ee;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#888;}
-  .stakes-row .player{font-weight:600;}
-  .stakes-row .pick-w{color:#1a5c2a;}
-  .stakes-row .pick-l{color:#b52a2a;}
-  .stakes-val{font-family:'DM Mono',monospace;font-weight:500;text-align:right;}
   .match{background:white;border:1px solid #d4d0c8;border-radius:8px;padding:16px 18px;margin-bottom:14px;}
   .match-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
   .teams{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.03em;}
-  .ko-badge{font-size:10px;background:#1a6e8f;color:white;padding:2px 8px;border-radius:3px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;}
+  .ko-badge{font-size:10px;background:#1a4d8f;color:white;padding:2px 8px;border-radius:3px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;}
   .time-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:6px;}
   .time{font-family:'DM Mono',monospace;font-size:12px;color:#888;}
-  .pts-row{display:flex;gap:6px;flex-wrap:wrap;font-family:'DM Mono',monospace;font-size:11px;}
-  .pts-chip{padding:2px 8px;border-radius:10px;}
-  .pts-chip.win{background:#e8f5ec;color:#1a5c2a;}
-  .pts-chip.loss{background:#fff0f0;color:#b52a2a;}
-  .pts-chip .base{opacity:0.6;font-size:10px;margin-left:3px;}
-  .picks-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
-  .pick{font-size:12px;border-radius:4px;padding:3px 9px;}
-  .pick.w{background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;}
-  .pick.l{background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;}
-  .pick b{font-weight:700;}
-  .pick .pv{font-family:'DM Mono',monospace;font-size:10px;opacity:0.75;margin-left:4px;}
-  .elim-note{font-size:11px;color:#7a5a10;background:#fff8e8;border:1px solid #C9A84C;border-radius:4px;padding:4px 10px;margin-top:8px;display:inline-block;}
+  .pot-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:2px 8px;border-radius:10px;}
+  .pot-tag.p1{background:#e8eef6;color:#1a3a5c;}
+  .pot-tag.p2{background:#f6ede4;color:#5c3a1a;}
+  .qf-note{font-size:13px;color:#444;line-height:1.5;margin-top:6px;}
+  .pick-chip{display:inline-block;font-size:11px;border-radius:10px;padding:2px 9px;margin:2px 3px 0 0;}
+  .pick-chip.w{background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;}
+  .pick-chip.l{background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;}
   .legend{display:flex;gap:14px;font-size:12px;color:#666;margin-bottom:6px;flex-wrap:wrap;}
   .legend span.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px;}
+  .callout{border-radius:8px;padding:16px 18px;margin-bottom:16px;}
+  .callout.gold{background:#fffaf0;border:1px solid #C9A84C;}
+  .callout.red{background:#fff3f3;border:1px solid #f4c4c4;}
+  .callout h3{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.03em;margin:0 0 8px;color:#1a1a1a;}
+  .callout .row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:13px;}
+  .callout .row:last-child{border-bottom:none;}
+  .callout .row .name{font-weight:600;}
+  .callout .row .num{font-family:'DM Mono',monospace;color:#555;}
+  .callout p{font-size:12.5px;color:#555;line-height:1.5;margin-top:8px;}
+  .mini-lb{width:100%;border-collapse:collapse;background:white;border:1px solid #d4d0c8;border-radius:8px;overflow:hidden;font-size:13px;margin-bottom:20px;}
+  .mini-lb th{background:#1a1a1a;color:rgba(255,255,255,0.75);padding:7px 12px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;}
+  .mini-lb th.r{text-align:right;}
+  .mini-lb td{padding:7px 12px;border-bottom:1px solid #f0ede6;}
+  .mini-lb td.r{text-align:right;font-family:'DM Mono',monospace;}
+  .mini-lb tr:last-child td{border-bottom:none;}
+  .mini-lb .ucl td:first-child{border-left:3px solid #1e6fa8;}
+  .mini-lb .rel td:first-child{border-left:3px solid #c0392b;}
+  .intro{font-size:13px;color:#444;line-height:1.5;margin-bottom:8px;}
+  .fact{background:white;border:1px solid #d4d0c8;border-radius:8px;padding:12px 16px;margin-bottom:10px;font-size:13px;line-height:1.5;}
+  .fact b{color:#1a5c2a;}
   footer{background:#1a1a1a;color:rgba(255,255,255,0.4);text-align:center;padding:16px;font-size:11px;font-family:'DM Mono',monospace;margin-top:32px;}
   footer span{color:#C9A84C;}
-  .intro{font-size:13px;color:#444;line-height:1.5;margin-bottom:8px;}
-  .refresh-btn{display:inline-flex;align-items:center;gap:6px;background:#1a5c2a;color:white;border:1px solid #2d8a47;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;}
-  .refresh-btn .spin{display:inline-block;transition:transform 0.4s;}
-  .lb-header{display:flex;align-items:center;justify-content:space-between;}
 </style></head><body>
 <div class="hero">
   <div>
     <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#E8C97A;margin-bottom:2px;">2026 FIFA World Cup Pool</div>
-    <h1>Pool <span>Newsletter</span> — 07-07-2026</h1>
+    <h1>Pool <span>Newsletter</span> — 07-08-2026</h1>
   </div>
-  <div class="hero-right">Round of 16 · Games 7–8 of 8<br>⚡ Multiplier: 3×</div>
+  <div class="hero-right">Rest Day · Quarterfinals begin tomorrow<br>⚡ Knockout: 3× &nbsp;·&nbsp; Final: 5×</div>
 </div>
 <div class="wrap">
 
   <div class="mult-banner">
-    <div class="badge">3×</div>
+    <div class="badge">8</div>
     <div class="label">
-      <strong>Final Day of the Round of 16</strong>
-      All point values are tripled. No draws — every game must have a winner. ET and PKs count as a win/loss. The Quarterfinals begin next.
+      <strong>Teams Left — The Final Eight</strong>
+      No games today. The Round of 16 is done and the bracket is set: France, Morocco, Norway, England, Spain, Belgium, Argentina, and Switzerland all move on to the quarterfinals.
     </div>
   </div>
 
-  <div class="lb-header">
-    <h2 style="margin-top:0;margin-bottom:0;">Today's Action — July 7</h2>
-    <button class="refresh-btn" onclick="(function(btn){var s=btn.querySelector('.spin');s.style.transform='rotate(360deg)';setTimeout(function(){s.style.transition='none';s.style.transform='';setTimeout(function(){s.style.transition='transform 0.4s';},50);},400);window.location.reload(true);}).call(null,this)">
-      <span class="spin">↻</span> Refresh
-    </button>
-  </div>
-  <p class="intro">The final two games of the Round of 16, listed in kickoff order, all times Central. Point chips show base value × 3× multiplier. No conflicts today — every pick is a clean standalone bet. After today, eight teams remain and the Quarterfinals begin.</p>
+  <h2>The Quarterfinals</h2>
+  <p class="intro">Four matches over three days, then a five-day breather before the semis. Every game from here on is win-or-go-home — no draws, and ET/PKs count as a result.</p>
 
-  <div class="legend">
-    <div><span class="sw" style="background:#e8f5ec;border:1px solid #b8dfc4;"></span>Picked to <b>win</b></div>
-    <div><span class="sw" style="background:#fff0f0;border:1px solid #f4c4c4;"></span>Picked to <b>lose</b></div>
-  </div>
-
-  <!-- STAKES TABLE -->
-  <div class="stakes">
-    <div class="stakes-hdr">⚡ Points on the line today — 3× multiplier</div>
-    <div class="stakes-row hdr">
-      <span>Player</span><span>Pick</span><span>Match</span><span style="text-align:right;font-family:'DM Mono',monospace">Points</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Dave Mestres</span><span class="pick-w">Egypt win</span><span>Argentina vs Egypt</span><span class="stakes-val">+600</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Tim Mestres</span><span class="pick-l">Argentina lose</span><span>Argentina vs Egypt</span><span class="stakes-val">+150</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Monica Mestres</span><span class="pick-w">Argentina win</span><span>Argentina vs Egypt</span><span class="stakes-val">+30</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">James Sabathne</span><span class="pick-l">Egypt lose</span><span>Argentina vs Egypt</span><span class="stakes-val">+30</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Corge Umlauf</span><span class="pick-l">Egypt lose</span><span>Argentina vs Egypt</span><span class="stakes-val">+30</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Camden Sabathne</span><span class="pick-l">Egypt lose</span><span>Argentina vs Egypt</span><span class="stakes-val">+30</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Deb Voegeli</span><span class="pick-w">Colombia win</span><span>Switzerland vs Colombia</span><span class="stakes-val">+150</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Corge Umlauf</span><span class="pick-w">Colombia win</span><span>Switzerland vs Colombia</span><span class="stakes-val">+150</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Camden Sabathne</span><span class="pick-w">Colombia win</span><span>Switzerland vs Colombia</span><span class="stakes-val">+150</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Payton Sabathne</span><span class="pick-w">Colombia win</span><span>Switzerland vs Colombia</span><span class="stakes-val">+150</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Tim Mestres</span><span class="pick-l">Switzerland lose</span><span>Switzerland vs Colombia</span><span class="stakes-val">+75</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Matt Wedemeier</span><span class="pick-l">Switzerland lose</span><span>Switzerland vs Colombia</span><span class="stakes-val">+75</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Maria Elena Martinez</span><span class="pick-l">Switzerland lose</span><span>Switzerland vs Colombia</span><span class="stakes-val">+75</span>
-    </div>
-  </div>
-
-  <!-- MATCH 1 -->
   <div class="match">
     <div class="match-hdr">
-      <div class="teams">🇦🇷 Argentina <span style="color:#888;font-weight:400;">vs</span> Egypt 🇪🇬</div>
-      <div class="ko-badge">Round of 16</div>
+      <div class="teams">🇫🇷 France <span style="color:#888;font-weight:400;">vs</span> Morocco 🇲🇦</div>
+      <div class="ko-badge">Quarterfinal</div>
     </div>
     <div class="time-row">
-      <div class="time">⏰ 11:00 AM CT</div>
-      <div class="pts-row">
-        <span class="pts-chip win">Argentina win: 30 <span class="base">(10×3)</span></span>
-        <span class="pts-chip loss">Argentina loss: 150 <span class="base">(50×3)</span></span>
-        <span class="pts-chip win">Egypt win: 600 <span class="base">(200×3)</span></span>
-        <span class="pts-chip loss">Egypt loss: 30 <span class="base">(10×3)</span></span>
-      </div>
+      <div class="time">⏰ Thu, Jul 9 · 3:00 PM CT</div>
+      <div><span class="pot-tag p1">France · Pot 1</span> <span class="pot-tag p2">Morocco · Pot 2</span></div>
     </div>
-    <div class="picks-row">
-      <div class="pick w"><b>Dave Mestres</b> — Egypt to win <span class="pv">+600</span></div>
-      <div class="pick w"><b>Monica Mestres</b> — Argentina to win <span class="pv">+30</span></div>
-      <div class="pick l"><b>Tim Mestres</b> — Argentina to lose <span class="pv">+150</span></div>
-      <div class="pick l"><b>James Sabathne</b> — Egypt to lose <span class="pv">+30</span></div>
-      <div class="pick l"><b>Corge Umlauf</b> — Egypt to lose <span class="pv">+30</span></div>
-      <div class="pick l"><b>Camden Sabathne</b> — Egypt to lose <span class="pv">+30</span></div>
-    </div>
-    <div style="margin-top:10px;">
-      <span class="elim-note">⚠ Knockout: the losing team is eliminated — their winner picks go cold for the rest of the tournament</span>
-    </div>
+    <p class="qf-note">Morocco is the pool's favorite Cinderella story — five different players have them picked to win, more than any other team left. France carries five win-picks too, and three players (Dave, Rob Foley, Maria Elena) are hedged with both, so they're covered no matter who advances. Whoever loses here, though, is out for good.</p>
   </div>
 
-  <!-- MATCH 2 -->
   <div class="match">
     <div class="match-hdr">
-      <div class="teams">🇨🇭 Switzerland <span style="color:#888;font-weight:400;">vs</span> Colombia 🇨🇴</div>
-      <div class="ko-badge">Round of 16</div>
+      <div class="teams">🇪🇸 Spain <span style="color:#888;font-weight:400;">vs</span> Belgium 🇧🇪</div>
+      <div class="ko-badge">Quarterfinal</div>
     </div>
     <div class="time-row">
-      <div class="time">⏰ 3:00 PM CT</div>
-      <div class="pts-row">
-        <span class="pts-chip win">Switzerland win: 150 <span class="base">(50×3)</span></span>
-        <span class="pts-chip loss">Switzerland loss: 75 <span class="base">(25×3)</span></span>
-        <span class="pts-chip win">Colombia win: 150 <span class="base">(50×3)</span></span>
-        <span class="pts-chip loss">Colombia loss: 75 <span class="base">(25×3)</span></span>
-      </div>
+      <div class="time">⏰ Fri, Jul 10 · 2:00 PM CT</div>
+      <div><span class="pot-tag p1">Spain · Pot 1</span> <span class="pot-tag p1">Belgium · Pot 1</span></div>
     </div>
-    <div class="picks-row">
-      <div class="pick w"><b>Deb Voegeli</b> — Colombia to win <span class="pv">+150</span></div>
-      <div class="pick w"><b>Corge Umlauf</b> — Colombia to win <span class="pv">+150</span></div>
-      <div class="pick w"><b>Camden Sabathne</b> — Colombia to win <span class="pv">+150</span></div>
-      <div class="pick w"><b>Payton Sabathne</b> — Colombia to win <span class="pv">+150</span></div>
-      <div class="pick l"><b>Tim Mestres</b> — Switzerland to lose <span class="pv">+75</span></div>
-      <div class="pick l"><b>Matt Wedemeier</b> — Switzerland to lose <span class="pv">+75</span></div>
-      <div class="pick l"><b>Maria Elena Martinez</b> — Switzerland to lose <span class="pv">+75</span></div>
-    </div>
-    <div style="margin-top:10px;">
-      <span class="elim-note">⚠ Knockout: the losing team is eliminated — their winner picks go cold for the rest of the tournament</span>
-    </div>
+    <p class="qf-note">The most popular surviving pick in the whole pool: six players (Deb, Roy, Tim, Payton, John, Steve) have Spain to win. Belgium has no one backing them to win, but three players (Rob Foley, Rob &amp; Monica White, Steve) are fading them to lose.</p>
   </div>
+
+  <div class="match">
+    <div class="match-hdr">
+      <div class="teams">🇳🇴 Norway <span style="color:#888;font-weight:400;">vs</span> England 🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+      <div class="ko-badge">Quarterfinal</div>
+    </div>
+    <div class="time-row">
+      <div class="time">⏰ Sat, Jul 11 · 4:00 PM CT</div>
+      <div><span class="pot-tag p1">Norway · Pot 1</span> <span class="pot-tag p1">England · Pot 1</span></div>
+    </div>
+    <p class="qf-note">Nobody picked Norway to win outright, but five players (Dave, Deb, Corge, Camden, Matt) are riding a Norway-to-lose pick — the longer Norway survives, the bigger that payout gets. England has just one win-backer (Rob &amp; Monica White) but two players fading them to lose.</p>
+  </div>
+
+  <div class="match">
+    <div class="match-hdr">
+      <div class="teams">🇦🇷 Argentina <span style="color:#888;font-weight:400;">vs</span> Switzerland 🇨🇭</div>
+      <div class="ko-badge">Quarterfinal</div>
+    </div>
+    <div class="time-row">
+      <div class="time">⏰ Sat, Jul 11 · 8:00 PM CT</div>
+      <div><span class="pot-tag p1">Argentina · Pot 1</span> <span class="pot-tag p2">Switzerland · Pot 2</span></div>
+    </div>
+    <p class="qf-note">Only Monica Mestres has Argentina to win. Tim Mestres has an interesting double: Argentina to lose <em>and</em> Switzerland to lose. One of those cashes the moment this match ends — and since only one team can win the whole tournament, the survivor is very likely to cash the other pick for him eventually too, just at a bigger payday down the road.</p>
+  </div>
+
+  <h2>Pool Standings — Where Things Stand</h2>
+  <p class="intro">96 of 104 matches played. Here's the top and bottom of the table heading into the quarters:</p>
+
+  <table class="mini-lb">
+    <thead><tr><th>#</th><th>Player</th><th class="r">Total</th></tr></thead>
+    <tbody>
+      <tr class="ucl"><td>🥇</td><td>Monica Mestres</td><td class="r">2075</td></tr>
+      <tr class="ucl"><td>🥈</td><td>Rob and Monica White</td><td class="r">1960</td></tr>
+      <tr class="ucl"><td>🥉</td><td>Tim Mestres</td><td class="r">1815</td></tr>
+      <tr class="ucl"><td>4</td><td>Matt Wedemeier</td><td class="r">1575</td></tr>
+      <tr><td colspan="3" style="padding:4px 12px;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:#888;background:#f5f3ee;">— 5 through 12 —</td></tr>
+      <tr class="rel"><td>13</td><td>Corge Umlauf</td><td class="r">1040</td></tr>
+      <tr class="rel"><td>14</td><td>Deb Voegeli</td><td class="r">880</td></tr>
+      <tr class="rel"><td>15</td><td>Camden Sabathne</td><td class="r">820</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout gold">
+    <h3>🏆 Who Can Still Win It</h3>
+    <p style="margin-top:0;font-size:12.5px;color:#555;">We ran every possible outcome of the remaining 7 games — all 128 combinations of the 4 quarterfinals, 2 semis, and the Final. Only three players can mathematically still finish 1st, no matter how the bracket breaks:</p>
+    <div class="row"><span class="name">Monica Mestres</span><span class="num">2075 → up to 2685</span></div>
+    <div class="row"><span class="name">Rob and Monica White</span><span class="num">1960 → up to 2790</span></div>
+    <div class="row"><span class="name">Tim Mestres</span><span class="num">1815 → up to 2170</span></div>
+    <p>Everyone else — including 4th-place Matt Wedemeier — is already mathematically out of the running for 1st. Matt's ceiling (1960) only matches Rob &amp; Monica's <em>current</em> score, and they're not done climbing. Rob Foley has the single highest ceiling of anyone not in this group (2330, riding his France/Morocco double), but France and Morocco play each other in the quarters, so he can never get the full value of both — which is exactly why he can't catch the top three.</p>
+  </div>
+
+  <div class="callout red">
+    <h3>🥄 Wooden Spoon Watch</h3>
+    <p style="margin-top:0;font-size:12.5px;color:#555;">Same exhaustive check, other end of the table. Only two players can possibly finish dead last:</p>
+    <div class="row"><span class="name">Camden Sabathne</span><span class="num">820 → up to 1100</span></div>
+    <div class="row"><span class="name">Deb Voegeli</span><span class="num">880 → up to 1240</span></div>
+    <p>Corge Umlauf, currently 13th at 1040, is mathematically safe from the cellar — he and Deb both benefit from Norway losing, which keeps him ahead of her in every single scenario. Everyone from Corge on up is guaranteed to finish above last place.</p>
+  </div>
+
+  <div class="fact">📌 <b>Frozen in place:</b> James Sabathne has no picks left alive — every team he chose is already eliminated. His 1305 points are locked in for the rest of the tournament, for better or worse. He'll finish 11th unless the field around him shifts.</div>
 
   <h2>What it means</h2>
-  <p class="intro">Argentina–Egypt opens with the day's biggest individual bet. Dave Mestres is alone on the 600-point Egypt upset — the largest single pick on the board today and one of the bolder calls of the entire tournament given Argentina's status as a Pot 1 favorite. Tim Mestres backs the same result from the other side, needing Argentina to lose for 150. Monica Mestres is the lone Argentina backer at 30 points, while James, Corge, and Camden each need Egypt to lose for 30. An Argentina win scores 30 + 150 + 30 + 30 + 30 = 270 points spread across five players; an Egypt win rewards Dave alone with 600.</p>
-  <p class="intro">Switzerland–Colombia is a clean consensus for Colombia. Four players — Deb, Corge, Camden, and Payton — are backing Colombia to win for 150 each, while Tim, Matt, and Maria Elena separately need Switzerland to lose for 75 — all seven picks pointing the same direction. A Colombia win delivers 150 × 4 = 600 points to the Colombia backers and 75 × 3 = 225 points to the Switzerland-lose crowd, for a combined 825-point haul across the group. A Switzerland upset would leave all seven empty-handed.</p>
-  <p class="intro">Tim Mestres has picks in both matches today — Argentina to lose (150) and Switzerland to lose (75) — giving him the highest clean maximum of 225 points if both results land. Corge Umlauf and Camden Sabathne each have picks in both matches as well, for a possible 180 points apiece. Dave Mestres sits in a class of his own on the Egypt bet — 600 points if the upset lands, zero if it doesn't.</p>
-  <p class="intro">With today's games completing the Round of 16, eight teams advance to the Quarterfinals. The bracket is half the size it was at the start of the knockouts, and every remaining pick carries real weight toward the finish line.</p>
+  <p class="intro">The Morocco storyline is the one to watch — it's the most-backed surviving underdog in the pool, and a win over France tomorrow would swing real points toward Dave, Rob Foley, Monica, Maria Elena, and Rob &amp; Monica White all at once. Spain, meanwhile, is the pool's consensus pick to go deep, with six players attached to their win.</p>
+  <p class="intro">At the top, it's a three-horse race between Monica Mestres, Rob and Monica White, and Tim Mestres — and it'll likely come down to how far Morocco and Argentina run, since those are the picks separating this trio from the chasing pack. At the bottom, Camden Sabathne and Deb Voegeli are playing for pride more than position; whoever's picks perform worse over these last two rounds picks up the wooden spoon.</p>
 </div>
 <footer><span>2026 FIFA WORLD CUP POOL</span> &nbsp;·&nbsp; June 11 – July 19, 2026 &nbsp;·&nbsp; Commissioner: Dave Mestres · davemestres@yahoo.com</footer>
 </body></html>
