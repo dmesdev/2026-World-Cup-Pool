@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<title>Pool Newsletter - 07-01-2026</title>
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<title>Pool Newsletter - 07-15-2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   body{font-family:'DM Sans',sans-serif;background:#faf8f4;color:#1a1a1a;margin:0;padding:0;font-size:14px;}
@@ -11,14 +10,15 @@
   .hero h1{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.04em;margin:0;}
   .hero h1 span{color:#C9A84C;}
   .hero-right{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.65);text-align:right;}
-  .wrap{max-width:760px;margin:0 auto;padding:24px 24px;}
+  .wrap{max-width:760px;margin:0 auto;padding:24px;}
   h2{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.04em;color:#1a5c2a;margin:28px 0 12px;}
-  .mult-banner{background:#1a4d8f;color:white;border-radius:8px;padding:12px 18px;display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+  .intro{font-size:13px;color:#444;line-height:1.6;margin-bottom:10px;}
+  .mult-banner{background:#8f6e1a;color:white;border-radius:8px;padding:12px 18px;display:flex;align-items:center;gap:14px;margin-bottom:20px;}
   .mult-banner .badge{font-family:'Bebas Neue',sans-serif;font-size:36px;color:#C9A84C;line-height:1;}
   .mult-banner .label{font-size:13px;line-height:1.5;}
   .mult-banner .label strong{display:block;font-size:15px;margin-bottom:2px;}
   .stakes{background:white;border:1px solid #d4d0c8;border-radius:8px;overflow:hidden;margin-bottom:20px;}
-  .stakes-hdr{background:#1a4d8f;color:white;padding:8px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;}
+  .stakes-hdr{background:#8f6e1a;color:white;padding:8px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;}
   .stakes-row{display:grid;grid-template-columns:1.4fr 1fr 1.4fr 80px;padding:8px 14px;border-bottom:1px solid #f0ede6;font-size:12px;align-items:center;}
   .stakes-row:last-child{border-bottom:none;}
   .stakes-row.hdr{background:#f5f3ee;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#888;}
@@ -26,63 +26,53 @@
   .stakes-row .pick-w{color:#1a5c2a;}
   .stakes-row .pick-l{color:#b52a2a;}
   .stakes-val{font-family:'DM Mono',monospace;font-weight:500;text-align:right;}
-  .stakes-row.conflict{background:#fff8e8;}
-  .match{background:white;border:1px solid #d4d0c8;border-radius:8px;padding:16px 18px;margin-bottom:14px;}
+  .match{background:white;border:1px solid #d4d0c8;border-radius:8px;padding:16px 18px;margin-bottom:20px;}
   .match-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
-  .teams{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.03em;}
-  .ko-badge{font-size:10px;background:#1a4d8f;color:white;padding:2px 8px;border-radius:3px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;}
-  .time-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:6px;}
-  .time{font-family:'DM Mono',monospace;font-size:12px;color:#888;}
-  .pts-row{display:flex;gap:6px;flex-wrap:wrap;font-family:'DM Mono',monospace;font-size:11px;}
+  .teams{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.03em;}
+  .ko-badge{font-size:10px;background:#8f6e1a;color:white;padding:2px 8px;border-radius:3px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;}
+  .time{font-family:'DM Mono',monospace;font-size:12px;color:#888;margin-top:6px;}
+  .pts-row{display:flex;gap:6px;flex-wrap:wrap;font-family:'DM Mono',monospace;font-size:11px;margin-top:10px;}
   .pts-chip{padding:2px 8px;border-radius:10px;}
   .pts-chip.win{background:#e8f5ec;color:#1a5c2a;}
   .pts-chip.loss{background:#fff0f0;color:#b52a2a;}
   .pts-chip .base{opacity:0.6;font-size:10px;margin-left:3px;}
-  .picks-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+  .picks-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
   .pick{font-size:12px;border-radius:4px;padding:3px 9px;}
   .pick.w{background:#e8f5ec;color:#1a5c2a;border:1px solid #b8dfc4;}
   .pick.l{background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;}
   .pick b{font-weight:700;}
   .pick .pv{font-family:'DM Mono',monospace;font-size:10px;opacity:0.75;margin-left:4px;}
-  .elim-note{font-size:11px;color:#7a5a10;background:#fff8e8;border:1px solid #C9A84C;border-radius:4px;padding:4px 10px;margin-top:8px;display:inline-block;}
-  .conflict-note{font-size:11px;color:#b52a2a;background:#fff0f0;border:1px solid #f4c4c4;border-radius:4px;padding:4px 10px;margin-top:8px;display:inline-block;}
-  .legend{display:flex;gap:14px;font-size:12px;color:#666;margin-bottom:6px;flex-wrap:wrap;}
-  .legend span.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px;}
+  .elim-note{font-size:11px;color:#7a5a10;background:#fff8e8;border:1px solid #C9A84C;border-radius:4px;padding:4px 10px;margin-top:10px;display:inline-block;}
+  .callout{border-radius:8px;padding:18px 20px;margin-bottom:16px;}
+  .callout.gold{background:#fffaf0;border:2px solid #C9A84C;}
+  .callout p{font-size:14px;line-height:1.8;margin:0;}
+  .refresh-btn{display:inline-flex;align-items:center;gap:6px;background:#1a5c2a;color:white;border:1px solid #2d8a47;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;}
+  .lb-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
   footer{background:#1a1a1a;color:rgba(255,255,255,0.4);text-align:center;padding:16px;font-size:11px;font-family:'DM Mono',monospace;margin-top:32px;}
   footer span{color:#C9A84C;}
-  .intro{font-size:13px;color:#444;line-height:1.5;margin-bottom:8px;}
-  .refresh-btn{display:inline-flex;align-items:center;gap:6px;background:#1a5c2a;color:white;border:1px solid #2d8a47;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;}
-  .refresh-btn .spin{display:inline-block;transition:transform 0.4s;}
-  .lb-header{display:flex;align-items:center;justify-content:space-between;}
 </style></head><body>
 <div class="hero">
   <div>
     <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#E8C97A;margin-bottom:2px;">2026 FIFA World Cup Pool</div>
-    <h1>Pool <span>Newsletter</span> — 07-01-2026</h1>
+    <h1>Pool <span>Newsletter</span> — 07-15-2026</h1>
   </div>
-  <div class="hero-right">Round of 32 · Games 8–10 of 16<br>⚡ Multiplier: 3×</div>
+  <div class="hero-right">Semifinals · Game 2 of 2<br>⚡ Multiplier: 3×</div>
 </div>
 <div class="wrap">
 
   <div class="mult-banner">
     <div class="badge">3×</div>
     <div class="label">
-      <strong>Knockout Stage — 3× Multiplier in Effect</strong>
-      All point values are tripled. No draws — every game must have a winner. ET and PKs count as a win/loss.
+      <strong>Semifinals — 3× Multiplier in Effect</strong>
+      Yesterday: Spain 2–0 France. Spain are in the Final. No draws — every game must have a winner.
     </div>
   </div>
 
   <div class="lb-header">
-    <h2 style="margin-top:0;margin-bottom:0;">Today's Action — July 1</h2>
+    <h2 style="margin:0;">Today's Match — July 15</h2>
     <button class="refresh-btn" onclick="(function(btn){var s=btn.querySelector('.spin');s.style.transform='rotate(360deg)';setTimeout(function(){s.style.transition='none';s.style.transform='';setTimeout(function(){s.style.transition='transform 0.4s';},50);},400);window.location.reload(true);}).call(null,this)">
       <span class="spin">↻</span> Refresh
     </button>
-  </div>
-  <p class="intro">Three Round of 32 matches today, listed in kickoff order, all times Central. Point chips show base value × 3× multiplier. ⚠ In knockout rounds there are no draws — every match must have a winner, meaning both-teams-to-lose picks can never both cash.</p>
-
-  <div class="legend">
-    <div><span class="sw" style="background:#e8f5ec;border:1px solid #b8dfc4;"></span>Picked to <b>win</b></div>
-    <div><span class="sw" style="background:#fff0f0;border:1px solid #f4c4c4;"></span>Picked to <b>lose</b></div>
   </div>
 
   <!-- STAKES TABLE -->
@@ -92,144 +82,54 @@
       <span>Player</span><span>Pick</span><span>Match</span><span style="text-align:right;font-family:'DM Mono',monospace">Points</span>
     </div>
     <div class="stakes-row">
-      <span class="player">Rob &amp; Monica White</span><span class="pick-w">England win</span><span>England vs DR Congo</span><span class="stakes-val">+30</span>
+      <span class="player">Rob &amp; Monica White</span><span class="pick-w">England win</span><span>England vs Argentina</span><span class="stakes-val">+30</span>
     </div>
     <div class="stakes-row">
-      <span class="player">Roy Roncal</span><span class="pick-l">England lose</span><span>England vs DR Congo</span><span class="stakes-val">+150</span>
-    </div>
-    <div class="stakes-row conflict">
-      <span class="player">Maria Elena Martinez ⚠</span><span class="pick-l">England lose</span><span>England vs DR Congo</span><span class="stakes-val">+150</span>
-    </div>
-    <div class="stakes-row conflict">
-      <span class="player">Maria Elena Martinez ⚠</span><span class="pick-l">DR Congo lose</span><span>England vs DR Congo</span><span class="stakes-val">+15</span>
+      <span class="player">Monica Mestres</span><span class="pick-w">Argentina win</span><span>England vs Argentina</span><span class="stakes-val">+30</span>
     </div>
     <div class="stakes-row">
-      <span class="player">Deb Voegeli</span><span class="pick-w">Senegal win</span><span>Belgium vs Senegal</span><span class="stakes-val">+300</span>
+      <span class="player">Roy Roncal</span><span class="pick-l">England lose</span><span>England vs Argentina</span><span class="stakes-val">+150</span>
     </div>
     <div class="stakes-row">
-      <span class="player">Matt Wedemeier</span><span class="pick-w">Senegal win</span><span>Belgium vs Senegal</span><span class="stakes-val">+300</span>
+      <span class="player">Maria Elena Martinez</span><span class="pick-l">England lose</span><span>England vs Argentina</span><span class="stakes-val">+150</span>
     </div>
     <div class="stakes-row">
-      <span class="player">Rob Foley</span><span class="pick-l">Belgium lose</span><span>Belgium vs Senegal</span><span class="stakes-val">+150</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Steve Mestres</span><span class="pick-l">Belgium lose</span><span>Belgium vs Senegal</span><span class="stakes-val">+150</span>
-    </div>
-    <div class="stakes-row conflict">
-      <span class="player">Rob &amp; Monica White ⚠</span><span class="pick-l">Belgium lose</span><span>Belgium vs Senegal</span><span class="stakes-val">+150</span>
-    </div>
-    <div class="stakes-row conflict">
-      <span class="player">Rob &amp; Monica White ⚠</span><span class="pick-l">Senegal lose</span><span>Belgium vs Senegal</span><span class="stakes-val">+45</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">John McCormick</span><span class="pick-l">Senegal lose</span><span>Belgium vs Senegal</span><span class="stakes-val">+45</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Roy Roncal</span><span class="pick-w">USA win</span><span>USA vs Bosnia</span><span class="stakes-val">+150</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Tim Mestres</span><span class="pick-l">Bosnia lose</span><span>USA vs Bosnia</span><span class="stakes-val">+30</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Matt Wedemeier</span><span class="pick-l">Bosnia lose</span><span>USA vs Bosnia</span><span class="stakes-val">+30</span>
-    </div>
-    <div class="stakes-row">
-      <span class="player">Maria Elena Martinez</span><span class="pick-l">Bosnia lose</span><span>USA vs Bosnia</span><span class="stakes-val">+30</span>
+      <span class="player">Tim Mestres</span><span class="pick-l">Argentina lose</span><span>England vs Argentina</span><span class="stakes-val">+150</span>
     </div>
   </div>
 
-  <!-- MATCH 1 -->
   <div class="match">
     <div class="match-hdr">
-      <div class="teams">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England <span style="color:#888;font-weight:400;">vs</span> DR Congo 🇨🇩</div>
-      <div class="ko-badge">Round of 32</div>
+      <div class="teams">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England <span style="color:#888;font-weight:400;">vs</span> Argentina 🇦🇷</div>
+      <div class="ko-badge">Semifinal</div>
     </div>
-    <div class="time-row">
-      <div class="time">⏰ 11:00 AM CT</div>
-      <div class="pts-row">
-        <span class="pts-chip win">England win: 30 <span class="base">(10×3)</span></span>
-        <span class="pts-chip loss">England loss: 150 <span class="base">(50×3)</span></span>
-        <span class="pts-chip win">DR Congo win: 1050 <span class="base">(350×3)</span></span>
-        <span class="pts-chip loss">DR Congo loss: 15 <span class="base">(5×3)</span></span>
-      </div>
+    <div class="time">⏰ 2:00 PM CT</div>
+    <div class="pts-row">
+      <span class="pts-chip win">England win: 30 <span class="base">(10×3)</span></span>
+      <span class="pts-chip loss">England loss: 150 <span class="base">(50×3)</span></span>
+      <span class="pts-chip win">Argentina win: 30 <span class="base">(10×3)</span></span>
+      <span class="pts-chip loss">Argentina loss: 150 <span class="base">(50×3)</span></span>
     </div>
     <div class="picks-row">
       <div class="pick w"><b>Rob &amp; Monica White</b> — England to win <span class="pv">+30</span></div>
+      <div class="pick w"><b>Monica Mestres</b> — Argentina to win <span class="pv">+30</span></div>
       <div class="pick l"><b>Roy Roncal</b> — England to lose <span class="pv">+150</span></div>
       <div class="pick l"><b>Maria Elena Martinez</b> — England to lose <span class="pv">+150</span></div>
-      <div class="pick l"><b>Maria Elena Martinez</b> — DR Congo to lose <span class="pv">+15</span></div>
-    </div>
-    <div style="margin-top:10px;">
-      <span class="conflict-note">⚠ Maria Elena has both England to lose and DR Congo to lose — in a knockout game with no draws, only one can score</span>
-    </div>
-    <div style="margin-top:6px;">
-      <span class="elim-note">⚠ Knockout: the losing team is eliminated — their winner picks go cold for the rest of the tournament</span>
-    </div>
-  </div>
-
-  <!-- MATCH 2 -->
-  <div class="match">
-    <div class="match-hdr">
-      <div class="teams">🇧🇪 Belgium <span style="color:#888;font-weight:400;">vs</span> Senegal 🇸🇳</div>
-      <div class="ko-badge">Round of 32</div>
-    </div>
-    <div class="time-row">
-      <div class="time">⏰ 3:00 PM CT</div>
-      <div class="pts-row">
-        <span class="pts-chip win">Belgium win: 30 <span class="base">(10×3)</span></span>
-        <span class="pts-chip loss">Belgium loss: 150 <span class="base">(50×3)</span></span>
-        <span class="pts-chip win">Senegal win: 300 <span class="base">(100×3)</span></span>
-        <span class="pts-chip loss">Senegal loss: 45 <span class="base">(15×3)</span></span>
-      </div>
-    </div>
-    <div class="picks-row">
-      <div class="pick w"><b>Deb Voegeli</b> — Senegal to win <span class="pv">+300</span></div>
-      <div class="pick w"><b>Matt Wedemeier</b> — Senegal to win <span class="pv">+300</span></div>
-      <div class="pick l"><b>Rob Foley</b> — Belgium to lose <span class="pv">+150</span></div>
-      <div class="pick l"><b>Steve Mestres</b> — Belgium to lose <span class="pv">+150</span></div>
-      <div class="pick l"><b>Rob &amp; Monica White</b> — Belgium to lose <span class="pv">+150</span></div>
-      <div class="pick l"><b>Rob &amp; Monica White</b> — Senegal to lose <span class="pv">+45</span></div>
-      <div class="pick l"><b>John McCormick</b> — Senegal to lose <span class="pv">+45</span></div>
-    </div>
-    <div style="margin-top:10px;">
-      <span class="conflict-note">⚠ Rob &amp; Monica White have both Belgium to lose and Senegal to lose — in a knockout game with no draws, only one can score</span>
-    </div>
-    <div style="margin-top:6px;">
-      <span class="elim-note">⚠ Knockout: the losing team is eliminated — their winner picks go cold for the rest of the tournament</span>
-    </div>
-  </div>
-
-  <!-- MATCH 3 -->
-  <div class="match">
-    <div class="match-hdr">
-      <div class="teams">🇺🇸 USA <span style="color:#888;font-weight:400;">vs</span> Bosnia 🇧🇦</div>
-      <div class="ko-badge">Round of 32</div>
-    </div>
-    <div class="time-row">
-      <div class="time">⏰ 7:00 PM CT</div>
-      <div class="pts-row">
-        <span class="pts-chip win">USA win: 150 <span class="base">(50×3)</span></span>
-        <span class="pts-chip loss">USA loss: 75 <span class="base">(25×3)</span></span>
-        <span class="pts-chip win">Bosnia win: 600 <span class="base">(200×3)</span></span>
-        <span class="pts-chip loss">Bosnia loss: 30 <span class="base">(10×3)</span></span>
-      </div>
-    </div>
-    <div class="picks-row">
-      <div class="pick w"><b>Roy Roncal</b> — USA to win <span class="pv">+150</span></div>
-      <div class="pick l"><b>Tim Mestres</b> — Bosnia to lose <span class="pv">+30</span></div>
-      <div class="pick l"><b>Matt Wedemeier</b> — Bosnia to lose <span class="pv">+30</span></div>
-      <div class="pick l"><b>Maria Elena Martinez</b> — Bosnia to lose <span class="pv">+30</span></div>
+      <div class="pick l"><b>Tim Mestres</b> — Argentina to lose <span class="pv">+150</span></div>
     </div>
     <div style="margin-top:10px;">
       <span class="elim-note">⚠ Knockout: the losing team is eliminated — their winner picks go cold for the rest of the tournament</span>
     </div>
   </div>
 
-  <h2>What it means</h2>
-  <p class="intro">England–DR Congo opens at 11:00 AM with a notable conflict. Maria Elena Martinez holds both England to lose (150) and DR Congo to lose (15) — but in a knockout match with no draws, one team must win and one must lose, so only one of those picks can score. Roy Roncal and Rob &amp; Monica White are the clean split: Roy needs England out for 150, Rob &amp; Monica need England to advance for 30. The DR Congo upset at 1,050 points — the highest single-game payout in the pool — goes unclaimed by anyone.</p>
-  <p class="intro">Belgium–Senegal is the day's most active match with seven picks. Deb Voegeli and Matt Wedemeier are both riding Senegal to win for 300 each, and Rob Foley and Steve Mestres are fading Belgium to lose for 150 apiece — all four pointing the same direction. Rob &amp; Monica White are caught in an impossible pairing again: Belgium to lose and Senegal to lose can't both cash in a game with no draws, leaving them guaranteed to score at most one of their two picks here. John McCormick is the lone Senegal skeptic, fading them to lose for 45.</p>
-  <p class="intro">USA–Bosnia closes the night as the tidiest match of the day. Roy Roncal is alone on the USA win for 150, while Tim, Matt, and Maria Elena each need Bosnia to lose for 30 — all four picks pointing toward a USA victory. A Bosnia upset at 600 points would leave the whole field empty-handed today on this one.</p>
-  <p class="intro">Matt Wedemeier has the biggest potential haul today: Senegal to win (300) and Bosnia to lose (30) gives him a possible 330 points if both results land. Roy Roncal is close behind with England to lose (150) and USA to win (150) for a possible 300 — though those are in different matches and each is a separate bet.</p>
+  <!-- TITLE RACE -->
+  <h2>🏆 Battle for the Title</h2>
+  <div class="callout gold">
+    <p>Today's match decides everything.<br><br>
+    <b>If England win:</b> Rob and Monica White win the pool. Full stop.<br><br>
+    <b>If Argentina win:</b> Rob and Monica White are eliminated. The title goes to the Final — Spain beats Argentina and <b>Tim Mestres wins</b>, or Argentina beats Spain and <b>Monica Mestres wins</b>.</p>
+  </div>
+
 </div>
 <footer><span>2026 FIFA WORLD CUP POOL</span> &nbsp;·&nbsp; June 11 – July 19, 2026 &nbsp;·&nbsp; Commissioner: Dave Mestres · davemestres@yahoo.com</footer>
 </body></html>
