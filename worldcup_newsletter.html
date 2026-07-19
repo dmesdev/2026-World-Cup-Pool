@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
-<title>Pool Newsletter - 07-15-2026</title>
+<title>Pool Newsletter - 07-19-2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   body{font-family:'DM Sans',sans-serif;background:#faf8f4;color:#1a1a1a;margin:0;padding:0;font-size:14px;}
@@ -13,12 +13,12 @@
   .wrap{max-width:760px;margin:0 auto;padding:24px;}
   h2{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.04em;color:#1a5c2a;margin:28px 0 12px;}
   .intro{font-size:13px;color:#444;line-height:1.6;margin-bottom:10px;}
-  .mult-banner{background:#8f6e1a;color:white;border-radius:8px;padding:12px 18px;display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+  .mult-banner{background:#8f1a1a;color:white;border-radius:8px;padding:12px 18px;display:flex;align-items:center;gap:14px;margin-bottom:20px;}
   .mult-banner .badge{font-family:'Bebas Neue',sans-serif;font-size:36px;color:#C9A84C;line-height:1;}
   .mult-banner .label{font-size:13px;line-height:1.5;}
   .mult-banner .label strong{display:block;font-size:15px;margin-bottom:2px;}
   .stakes{background:white;border:1px solid #d4d0c8;border-radius:8px;overflow:hidden;margin-bottom:20px;}
-  .stakes-hdr{background:#8f6e1a;color:white;padding:8px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;}
+  .stakes-hdr{background:#8f1a1a;color:white;padding:8px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;}
   .stakes-row{display:grid;grid-template-columns:1.4fr 1fr 1.4fr 80px;padding:8px 14px;border-bottom:1px solid #f0ede6;font-size:12px;align-items:center;}
   .stakes-row:last-child{border-bottom:none;}
   .stakes-row.hdr{background:#f5f3ee;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#888;}
@@ -29,7 +29,7 @@
   .match{background:white;border:1px solid #d4d0c8;border-radius:8px;padding:16px 18px;margin-bottom:20px;}
   .match-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
   .teams{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.03em;}
-  .ko-badge{font-size:10px;background:#8f6e1a;color:white;padding:2px 8px;border-radius:3px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;}
+  .ko-badge{font-size:10px;background:#8f1a1a;color:white;padding:2px 8px;border-radius:3px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;}
   .time{font-family:'DM Mono',monospace;font-size:12px;color:#888;margin-top:6px;}
   .pts-row{display:flex;gap:6px;flex-wrap:wrap;font-family:'DM Mono',monospace;font-size:11px;margin-top:10px;}
   .pts-chip{padding:2px 8px;border-radius:10px;}
@@ -42,10 +42,26 @@
   .pick.l{background:#fff0f0;color:#b52a2a;border:1px solid #f4c4c4;}
   .pick b{font-weight:700;}
   .pick .pv{font-family:'DM Mono',monospace;font-size:10px;opacity:0.75;margin-left:4px;}
-  .elim-note{font-size:11px;color:#7a5a10;background:#fff8e8;border:1px solid #C9A84C;border-radius:4px;padding:4px 10px;margin-top:10px;display:inline-block;}
   .callout{border-radius:8px;padding:18px 20px;margin-bottom:16px;}
   .callout.gold{background:#fffaf0;border:2px solid #C9A84C;}
+  .callout.spoon{background:white;border:2px solid #C9A84C;border-radius:12px;padding:18px 20px;margin-bottom:16px;}
   .callout p{font-size:14px;line-height:1.8;margin:0;}
+  .title-scenario{background:white;border:1px solid #d4d0c8;border-radius:8px;overflow:hidden;margin-top:12px;}
+  .scenario-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #f0ede6;}
+  .scenario-row:last-child{border-bottom:none;}
+  .scenario-cell{padding:14px 16px;font-size:13px;line-height:1.5;}
+  .scenario-cell.result{background:#f5f3ee;font-weight:700;font-size:12px;font-family:'DM Mono',monospace;display:flex;align-items:center;}
+  .scenario-cell.outcome{font-size:13px;}
+  .scenario-cell.outcome b{color:#1a5c2a;}
+  .lb{width:100%;border-collapse:collapse;background:white;border:1px solid #d4d0c8;border-radius:8px;overflow:hidden;font-size:13px;margin-bottom:20px;}
+  .lb th{background:#1a1a1a;color:rgba(255,255,255,0.75);padding:7px 12px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;}
+  .lb th.r{text-align:right;}
+  .lb td{padding:7px 12px;border-bottom:1px solid #f0ede6;}
+  .lb td.r{text-align:right;font-family:'DM Mono',monospace;}
+  .lb tr:last-child td{border-bottom:none;}
+  .lb .ucl td:first-child{border-left:3px solid #1e6fa8;}
+  .lb .rel td:first-child{border-left:3px solid #c0392b;}
+  .lb .contender{background:#fffaf0;}
   .refresh-btn{display:inline-flex;align-items:center;gap:6px;background:#1a5c2a;color:white;border:1px solid #2d8a47;border-radius:6px;padding:6px 14px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;}
   .lb-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
   footer{background:#1a1a1a;color:rgba(255,255,255,0.4);text-align:center;padding:16px;font-size:11px;font-family:'DM Mono',monospace;margin-top:32px;}
@@ -54,22 +70,22 @@
 <div class="hero">
   <div>
     <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#E8C97A;margin-bottom:2px;">2026 FIFA World Cup Pool</div>
-    <h1>Pool <span>Newsletter</span> — 07-15-2026</h1>
+    <h1>Pool <span>Newsletter</span> — 07-19-2026</h1>
   </div>
-  <div class="hero-right">Semifinals · Game 2 of 2<br>⚡ Multiplier: 3×</div>
+  <div class="hero-right">The Final · Game 104 of 104<br>⚡ Multiplier: 5×</div>
 </div>
 <div class="wrap">
 
   <div class="mult-banner">
-    <div class="badge">3×</div>
+    <div class="badge">5×</div>
     <div class="label">
-      <strong>Semifinals — 3× Multiplier in Effect</strong>
-      Yesterday: Spain 2–0 France. Spain are in the Final. No draws — every game must have a winner.
+      <strong>The World Cup Final — 5× Multiplier</strong>
+      The last game of the tournament. One match. Everything on the line.
     </div>
   </div>
 
   <div class="lb-header">
-    <h2 style="margin:0;">Today's Match — July 15</h2>
+    <h2 style="margin:0;">Today's Match — July 19</h2>
     <button class="refresh-btn" onclick="(function(btn){var s=btn.querySelector('.spin');s.style.transform='rotate(360deg)';setTimeout(function(){s.style.transition='none';s.style.transform='';setTimeout(function(){s.style.transition='transform 0.4s';},50);},400);window.location.reload(true);}).call(null,this)">
       <span class="spin">↻</span> Refresh
     </button>
@@ -77,57 +93,97 @@
 
   <!-- STAKES TABLE -->
   <div class="stakes">
-    <div class="stakes-hdr">⚡ Points on the line today — 3× multiplier</div>
+    <div class="stakes-hdr">⚡ Points on the line today — 5× multiplier</div>
     <div class="stakes-row hdr">
       <span>Player</span><span>Pick</span><span>Match</span><span style="text-align:right;font-family:'DM Mono',monospace">Points</span>
     </div>
     <div class="stakes-row">
-      <span class="player">Rob &amp; Monica White</span><span class="pick-w">England win</span><span>England vs Argentina</span><span class="stakes-val">+30</span>
+      <span class="player">Tim Mestres</span><span class="pick-l">Argentina lose</span><span>Spain vs Argentina</span><span class="stakes-val">+250</span>
     </div>
     <div class="stakes-row">
-      <span class="player">Monica Mestres</span><span class="pick-w">Argentina win</span><span>England vs Argentina</span><span class="stakes-val">+30</span>
+      <span class="player">Monica Mestres</span><span class="pick-w">Argentina win</span><span>Spain vs Argentina</span><span class="stakes-val">+50</span>
     </div>
     <div class="stakes-row">
-      <span class="player">Roy Roncal</span><span class="pick-l">England lose</span><span>England vs Argentina</span><span class="stakes-val">+150</span>
+      <span class="player">Deb Voegeli</span><span class="pick-w">Spain win</span><span>Spain vs Argentina</span><span class="stakes-val">+50</span>
     </div>
     <div class="stakes-row">
-      <span class="player">Maria Elena Martinez</span><span class="pick-l">England lose</span><span>England vs Argentina</span><span class="stakes-val">+150</span>
+      <span class="player">Roy Roncal</span><span class="pick-w">Spain win</span><span>Spain vs Argentina</span><span class="stakes-val">+50</span>
     </div>
     <div class="stakes-row">
-      <span class="player">Tim Mestres</span><span class="pick-l">Argentina lose</span><span>England vs Argentina</span><span class="stakes-val">+150</span>
+      <span class="player">Payton Sabathne</span><span class="pick-w">Spain win</span><span>Spain vs Argentina</span><span class="stakes-val">+50</span>
+    </div>
+    <div class="stakes-row">
+      <span class="player">John McCormick</span><span class="pick-w">Spain win</span><span>Spain vs Argentina</span><span class="stakes-val">+50</span>
+    </div>
+    <div class="stakes-row">
+      <span class="player">Steve Mestres</span><span class="pick-w">Spain win</span><span>Spain vs Argentina</span><span class="stakes-val">+50</span>
+    </div>
+    <div class="stakes-row">
+      <span class="player">Tim Mestres</span><span class="pick-w">Spain win</span><span>Spain vs Argentina</span><span class="stakes-val">+50</span>
     </div>
   </div>
 
   <div class="match">
     <div class="match-hdr">
-      <div class="teams">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England <span style="color:#888;font-weight:400;">vs</span> Argentina 🇦🇷</div>
-      <div class="ko-badge">Semifinal</div>
+      <div class="teams">🇪🇸 Spain <span style="color:#888;font-weight:400;">vs</span> Argentina 🇦🇷</div>
+      <div class="ko-badge">The Final</div>
     </div>
     <div class="time">⏰ 2:00 PM CT</div>
     <div class="pts-row">
-      <span class="pts-chip win">England win: 30 <span class="base">(10×3)</span></span>
-      <span class="pts-chip loss">England loss: 150 <span class="base">(50×3)</span></span>
-      <span class="pts-chip win">Argentina win: 30 <span class="base">(10×3)</span></span>
-      <span class="pts-chip loss">Argentina loss: 150 <span class="base">(50×3)</span></span>
+      <span class="pts-chip win">Spain win: 50 <span class="base">(10×5)</span></span>
+      <span class="pts-chip loss">Spain loss: 250 <span class="base">(50×5)</span></span>
+      <span class="pts-chip win">Argentina win: 50 <span class="base">(10×5)</span></span>
+      <span class="pts-chip loss">Argentina loss: 250 <span class="base">(50×5)</span></span>
     </div>
     <div class="picks-row">
-      <div class="pick w"><b>Rob &amp; Monica White</b> — England to win <span class="pv">+30</span></div>
-      <div class="pick w"><b>Monica Mestres</b> — Argentina to win <span class="pv">+30</span></div>
-      <div class="pick l"><b>Roy Roncal</b> — England to lose <span class="pv">+150</span></div>
-      <div class="pick l"><b>Maria Elena Martinez</b> — England to lose <span class="pv">+150</span></div>
-      <div class="pick l"><b>Tim Mestres</b> — Argentina to lose <span class="pv">+150</span></div>
-    </div>
-    <div style="margin-top:10px;">
-      <span class="elim-note">⚠ Knockout: the losing team is eliminated — their winner picks go cold for the rest of the tournament</span>
+      <div class="pick w"><b>Deb Voegeli</b> — Spain to win <span class="pv">+50</span></div>
+      <div class="pick w"><b>Roy Roncal</b> — Spain to win <span class="pv">+50</span></div>
+      <div class="pick w"><b>Tim Mestres</b> — Spain to win <span class="pv">+50</span></div>
+      <div class="pick w"><b>Payton Sabathne</b> — Spain to win <span class="pv">+50</span></div>
+      <div class="pick w"><b>John McCormick</b> — Spain to win <span class="pv">+50</span></div>
+      <div class="pick w"><b>Steve Mestres</b> — Spain to win <span class="pv">+50</span></div>
+      <div class="pick w"><b>Monica Mestres</b> — Argentina to win <span class="pv">+50</span></div>
+      <div class="pick l"><b>Tim Mestres</b> — Argentina to lose <span class="pv">+250</span></div>
     </div>
   </div>
+
+  <!-- STANDINGS -->
+  <h2>Standings Before the Final</h2>
+  <table class="lb">
+    <thead><tr><th>#</th><th>Player</th><th class="r">Total</th></tr></thead>
+    <tbody>
+      <tr class="ucl contender"><td>🥇</td><td>Rob and Monica White <span style="font-size:10px;color:#888;font-family:'DM Mono',monospace;">no live picks</span></td><td class="r">2170</td></tr>
+      <tr class="ucl contender"><td>🥈</td><td>Monica Mestres</td><td class="r">2135</td></tr>
+      <tr class="ucl contender"><td>🥉</td><td>Tim Mestres</td><td class="r">1950</td></tr>
+      <tr class="ucl"><td>4</td><td>Matt Wedemeier</td><td class="r">1830</td></tr>
+      <tr><td colspan="3" style="padding:4px 12px;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:#888;background:#f5f3ee;">— Champions League —</td></tr>
+      <tr><td>5</td><td>Dave Mestres</td><td class="r">1745</td></tr>
+      <tr><td>6</td><td>Maria Elena Martinez</td><td class="r">1735</td></tr>
+      <tr><td>7</td><td>Rob Foley</td><td class="r">1710</td></tr>
+      <tr><td>8</td><td>Roy Roncal</td><td class="r">1655</td></tr>
+      <tr><td>9</td><td>Payton Sabathne</td><td class="r">1625</td></tr>
+      <tr><td>10</td><td>John McCormick</td><td class="r">1440</td></tr>
+      <tr><td>11</td><td>Steve Mestres</td><td class="r">1380</td></tr>
+      <tr><td>12</td><td>James Sabathne</td><td class="r">1305</td></tr>
+      <tr><td>13</td><td>Corge Umlauf</td><td class="r">1265</td></tr>
+      <tr><td colspan="3" style="padding:4px 12px;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:#888;background:#f5f3ee;">— Relegation Zone —</td></tr>
+      <tr class="rel"><td>14</td><td>Deb Voegeli</td><td class="r">1090</td></tr>
+      <tr class="rel"><td>15</td><td>Camden Sabathne</td><td class="r">1000</td></tr>
+    </tbody>
+  </table>
 
   <!-- TITLE RACE -->
   <h2>🏆 Battle for the Title</h2>
   <div class="callout gold">
-    <p>Today's match decides everything.<br><br>
-    <b>If England win:</b> Rob and Monica White win the pool. Full stop.<br><br>
-    <b>If Argentina win:</b> Rob and Monica White are eliminated. The title goes to the Final — Spain beats Argentina and <b>Tim Mestres wins</b>, or Argentina beats Spain and <b>Monica Mestres wins</b>.</p>
+    <p>Rob and Monica White lead at 2170 after earning 30 points for England's 3rd place win — but they have no live picks and can only watch.<br><br>
+    <b>Spain wins:</b> Tim Mestres scores Spain WIN (+50) and Argentina LOSE (+250) = +300 → <b>Tim wins the pool with 2250</b>, leapfrogging everyone.<br><br>
+    <b>Argentina wins:</b> Monica Mestres scores Argentina WIN (+50) → <b>Monica wins the pool with 2185</b>, edging past Rob and Monica White's 2170.</p>
+  </div>
+
+  <!-- SPOON -->
+  <h2>🥄 Battle for the Spoon</h2>
+  <div class="callout spoon">
+    <p><b>Camden Sabathne wins the spoon</b> — frozen at 1,000 points with no live picks remaining. Deb Voegeli's Spain WIN pick gives her +50 if Spain win, putting her at 1,140 and safely clear of Camden either way. The spoon belongs to Camden. 🥄</p>
   </div>
 
 </div>
